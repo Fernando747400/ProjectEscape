@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class GameManager : MonoBehaviour
@@ -12,18 +13,19 @@ public class GameManager : MonoBehaviour
         current = this;
     }
 
-    public event Action OnExplodeScene;
+    public event Action StartTutorial;
 
-    public void explodeScene()
+    public void startTutorial()
     {
-        OnExplodeScene?.Invoke();
+        StartTutorial?.Invoke();
     }
 
-    public event Action OnRollbackScene;
+    public event Action FinishTutorial;
 
-    public void rollbackScene()
+    public void finishTutorial()
     {
-        OnRollbackScene?.Invoke();
+        finishTutorial?.Invoke();
     }
+
 
 }

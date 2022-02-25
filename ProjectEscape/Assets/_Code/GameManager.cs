@@ -11,21 +11,17 @@ public class GameManager : MonoBehaviour
     public void Awake()
     {
         current = this;
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public event Action StartTutorial;
 
-    public void startTutorial()
-    {
-        StartTutorial?.Invoke();
-    }
+    public void startTutorial() => StartTutorial?.Invoke();
+
 
     public event Action FinishTutorial;
 
-    public void finishTutorial()
-    {
-        finishTutorial?.Invoke();
-    }
+    public void finishTutorial() => FinishTutorial?.Invoke();
 
 
 }

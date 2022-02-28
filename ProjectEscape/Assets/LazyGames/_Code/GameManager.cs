@@ -23,5 +23,4 @@ public class GameManager : MonoBehaviour
 
     public void finishTutorial() => FinishTutorial?.Invoke();
 
-
 }

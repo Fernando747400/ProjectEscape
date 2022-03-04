@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
         GameManager.current.StartTutorial += Open;
     }
 
+    private void OnDisable()
+    {
+        GameManager.current.StartTutorial -= Open;
+    }
+
     void Open()
     {
-        iTween.MoveTo(this.gameObject, iTween.Hash(new Vector3(5,5,5), "time",5));
+        iTween.MoveTo(this.gameObject, iTween.Hash("position",new Vector3(2,4,0), "time",5));
     }
 }

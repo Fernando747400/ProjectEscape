@@ -1,0 +1,74 @@
+{
+    "name": "TutorialInput",
+    "maps": [
+        {
+            "name": "TutorialAction",
+            "id": "685d00bd-9c36-4e3b-bc05-b52b5e11a462",
+            "actions": [
+                {
+                    "name": "MousePress",
+                    "type": "Button",
+                    "id": "07a304da-6888-4266-8d33-38600382d6e9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MouseDrag",
+                    "type": "Value",
+                    "id": "4febc823-7453-416a-9609-7ce270b73c25",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MousePosition",
+                    "type": "Button",
+                    "id": "f1cd7bd7-2b6f-42a4-bed2-ee5042cf5a93",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6f23aadf-d003-483f-91e0-ba3f6717a215",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c86763c-bb93-4814-8307-5892b7e2a9b8",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseDrag",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4e2311d7-7be2-4cb6-a294-4414d3857c8a",
+                    "path": "<Mouse>/press",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

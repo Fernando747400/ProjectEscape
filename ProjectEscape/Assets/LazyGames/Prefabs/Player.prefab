@@ -106,6 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6120263173376937042}
   - component: {fileID: 6120263173376937041}
+  - component: {fileID: 5021091876879387550}
   - component: {fileID: 6120263173376937043}
   m_Layer: 0
   m_Name: Player
@@ -141,6 +142,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c82d91d026bd7429f80876f568f7ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 1
+  transformCamera: {fileID: 0}
+  sensitivityX: 20
+  sensitivityY: 0.5
+--- !u!114 &5021091876879387550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6120263173376937040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63aa19b274ede7d4fb443ad5b5c4a08b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 6120263173376937041}
 --- !u!143 &6120263173376937043
 CharacterController:
   m_ObjectHideFlags: 0

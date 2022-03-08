@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
-    
+    [SerializeField] private GameObject inputsUI;
     
     [Header("Camera")]
     [SerializeField] Transform transformCamera;
@@ -16,14 +17,17 @@ public class PlayerController : MonoBehaviour
     
     private CharacterController myCharacterController;
     
+    // Camera and Player Movement
     float cameraLimit = 85f;
     float xRotation = 0;
     float mouseX, mouseY;
 
     private Vector2 myVector2Move;
     private Vector2 myVector2Cam;
+
+    [SerializeField] private bool isInteracting;
     
-    private PlayerStates _playerStates;
+    public PlayerStates _playerStates;
     public PlayerStates PlayerState
     {
         get{ return _playerStates;}
@@ -38,6 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         MovementPlayer();
         MovementCamera();
+        HandlePlayerStates();
     }
 
     void SetPlayer()
@@ -47,6 +52,7 @@ public class PlayerController : MonoBehaviour
 
     public void ReceiveInputsPlayer(Vector2 _vectorMove, Vector2 _vectorCam)
     {
+        
         myVector2Move = _vectorMove;
         myVector2Cam = _vectorCam;
         
@@ -70,10 +76,27 @@ public class PlayerController : MonoBehaviour
        transformCamera.eulerAngles = targetRotation;
        
     }
+
+    private void HandlePlayerStates()
+    {
+        if (isInteracting)
+        {
+            PlayerState = PlayerStates.Interacting;
+            inputsUI.gameObject.SetActive(false);
+
+        }
+        else
+        {
+            PlayerState = PlayerStates.NoInteracting;
+            inputsUI.gameObject.SetActive(true);
+        }
+    }
+}
+    
     public enum PlayerStates
     {
         NoInteracting = 0,
         Interacting = 1,
     
     }
-}
+

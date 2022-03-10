@@ -1,85 +1,85 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MouseDragY : TutorialInputManager
+public class RotationLeverY : TutorialInputManager
 {
-    private GameObject Tarjeta;
+    private GameObject Switch;
     private bool press;
-    private bool BombillaUno;
+    private bool BombillaDos;
     public Material Bombilla;
-    private BoxCollider box;
-    public GameObject Glass;
 
     private void Start()
     {
         press = false;
-        BombillaUno = false;
-        box = gameObject.GetComponent<BoxCollider>();
+        BombillaDos = false;
     }
 
     private void Update()
     {
-        if(BombillaUno == false)
+        Debug.Log(Mouse.current.position.ReadDefaultValue().x);
+        if (BombillaDos == false)
         {
             Bombilla.color = Color.white;
         }
-        if (BombillaUno == true)
+        if (BombillaDos == true)
         {
-            Bombilla.color = Color.green;
-            box.enabled = false;
+            Bombilla.color = Color.yellow;
         }
 
-        if (Tarjeta == null)
+        if (Switch == null)
         {
             RaycastHit hit = CastRay();
+
             if (hit.collider != null)
             {
-                if (!hit.collider.CompareTag("Tarjeta"))
+                if (!hit.collider.CompareTag("Lever"))
                 {
+                    Debug.Log("No es la tarjeta");
                     return;
                 }
-                Tarjeta = hit.collider.gameObject;
+
+                Debug.Log("Es la palanca");
+                Switch = hit.collider.gameObject;
             }
         }
         else
         {
             RaycastHit hit = CastRay();
-            Tarjeta = null;
+            Switch = null;
+            Debug.Log("No choca con nada");
         }
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Great")
+        if (other.tag == "Great")
         {
-            BombillaUno = true;
-            Glass.SetActive(false);
-        }    
+            BombillaDos = true;
+        }
     }
 
     protected override void MouseDrag(InputAction.CallbackContext value)
     {
         if (press == true)
         {
-            Vector3 ScreenPosition = new Vector3(-1.3f, 2f, Mouse.current.position.ReadValue().y / 250);
-            transform.position = ScreenPosition;
+            Vector3 ScreenPosition = new Vector3(175, 0, 0);
+            transform.rotation = Quaternion.Euler(ScreenPosition);
         }
     }
 
     protected override void MousePress(InputAction.CallbackContext value)
     {
-        if (Tarjeta != null)
+        if (Switch != null)
         {
             press = true;
         }
-
     }
 
     protected override void MousePosition(InputAction.CallbackContext value)
     {
         press = false;
     }
-    
+
     private RaycastHit CastRay()
     {
         Vector3 screenMousePosFar = new Vector3(

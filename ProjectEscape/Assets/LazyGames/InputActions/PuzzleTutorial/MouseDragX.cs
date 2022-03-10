@@ -31,7 +31,6 @@ public class MouseDragX : TutorialInputManager
         if (Switch == null)
         {
             RaycastHit hit = CastRay();
-            Debug.Log("No choca con nada");
 
             if (hit.collider != null)
             {

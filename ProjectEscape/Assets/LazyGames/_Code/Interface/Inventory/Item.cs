@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Items : MonoBehaviour
+public class Item : MonoBehaviour
 {
     public int numberOfObjects = 1;
     public Text numberOfObjectsText;

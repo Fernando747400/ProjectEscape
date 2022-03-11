@@ -16,12 +16,14 @@ public class GameManager : MonoBehaviour
     }
 
     public event Action StartTutorial;
-
     public void startTutorial() => StartTutorial?.Invoke();
 
 
     public event Action FinishTutorial;
-
     public void finishTutorial() => FinishTutorial?.Invoke();
+
+
+    public event Action ShowCardConsole;
+    public void showCardConsole() => ShowCardConsole.Invoke();
 
 }

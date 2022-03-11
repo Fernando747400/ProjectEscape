@@ -12,6 +12,7 @@ public class Raycast : MonoBehaviour
 	[Header("Rycast")]
     [Range(0f, 100f)]
     [SerializeField] float distanceHit;
+	[SerializeField] LayerMask usablesMask;
 
     private void Start()
     {
@@ -39,7 +40,7 @@ public class Raycast : MonoBehaviour
 		RaycastHit hit;
 		Vector2 coordinate = new Vector2(Screen.width / 2, Screen.height / 2);
 		Ray myRay = myCamera.ScreenPointToRay(coordinate);
-		if ((Physics.Raycast(myRay, out hit, distanceHit)))
+		if ((Physics.Raycast(myRay, out hit, distanceHit, usablesMask.value)))
 		{
 			Debug.Log("Raycast hitted: " + hit.transform.gameObject.name);
 			IUsable usable = hit.transform.GetComponent<IUsable>();

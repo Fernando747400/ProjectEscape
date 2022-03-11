@@ -18,7 +18,12 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        numberOfObjectsText.text = numberOfObjects.ToString();
+        if(transform.parent.GetComponent<Image>() != null)
+        {
+            transform.parent.GetComponent<Image>().fillCenter = true;
+        }
+        
+        //numberOfObjectsText.text = numberOfObjects.ToString();
     }
 }
 

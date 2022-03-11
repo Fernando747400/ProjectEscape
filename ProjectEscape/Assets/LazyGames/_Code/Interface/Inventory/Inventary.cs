@@ -47,75 +47,87 @@ public class Inventary : MonoBehaviour
         mouse = Mouse.current;
         Vector2 mousePosition = mouse.delta.ReadValue();
 
+        pointerData.position = mousePosition;
+        graphRay.Raycast(pointerData, raycastResults);
+        
         // al tocar el item obtiene su informacion
         if(mouse.leftButton.wasPressedThisFrame)
         {
             pointerData.position = mousePosition;
             graphRay.Raycast(pointerData, raycastResults);
-        }
-        // se guarda la informacion del item en selectedObject
-        if(raycastResults.Count > 0){
-            if(raycastResults[0].gameObject.GetComponent<Item>())
+            // se guarda la informacion del item en selectedObject
+            if(raycastResults.Count > 0)
             {
-                selectedObject = raycastResults[0].gameObject;
-                lastSlot = selectedObject.transform.parent.transform;
-                selectedObject.transform.SetParent(canvas);
-            }
+                if(raycastResults[0].gameObject.GetComponent<Item>())
+                {
+                    selectedObject = raycastResults[0].gameObject;
+                    lastSlot = selectedObject.transform.parent;
+                    lastSlot.GetComponent<Image>().fillCenter = false;
+                    selectedObject.transform.SetParent(canvas);
+                }
         }
 
+        }
+
+        
+
         // Mueve el item de slot al seleccionarlo
-        if(selectedObject != null){}
+        if(selectedObject != null)
         {
             selectedObject.GetComponent<RectTransform>().localPosition = CanvasScreen(mousePosition);
         }
 
-        // Al soltar el mouse soltara el item a un slot vacio
-        if(mouse.leftButton.wasReleasedThisFrame)
+        if(selectedObject != null)
         {
-            // guarda la posicion del mouse
-            pointerData.position = mousePosition;
-            // limpia la informacion del item
-            raycastResults.Clear();
-            graphRay.Raycast(pointerData, raycastResults);
-            if(raycastResults.Count > 0)
+            // Al soltar el mouse soltara el item a un slot vacio
+            if(mouse.leftButton.wasReleasedThisFrame)
             {
-                foreach(var result in raycastResults)
+              // guarda la posicion del mouse
+               pointerData.position = mousePosition;
+                // limpia la informacion del item
+               raycastResults.Clear();
+               graphRay.Raycast(pointerData, raycastResults);
+
+              selectedObject.transform.SetParent(lastSlot);
+
+                if(raycastResults.Count > 0)
                 {
-                    if(result.gameObject.tag == "Slot")
+                  foreach(var result in raycastResults)
                     {
-                        // bloquea los slots ya ocupados
-                        if(result.gameObject.GetComponentInChildren<Item>() == null)
+                        if (result.gameObject == selectedObject) {continue;}
+                        if(result.gameObject.CompareTag ("Slot"))
                         {
-                            selectedObject.transform.localPosition = Vector2.zero;
-                            selectedObject.transform.SetParent(result.gameObject.transform);
-                            lastSlot = selectedObject.transform.parent.transform;
-                            Debug.Log("Slot Libre");
-                        }
-                        // Se pueden juntar los items simpre y cuando sean del mismo tipo.
-                        else
-                        {
-                            if(result.gameObject.GetComponentInChildren<Item>().ID == selectedObject.GetComponent<Item>().ID)
+                         // coloca el item en el slot libre seleccionado
+                            if(result.gameObject.GetComponentInChildren<Item>() == null)
                             {
+                                selectedObject.transform.SetParent(result.gameObject.transform);
+                                Debug.Log("Slot Libre");
+                            }
+                        
+                            //se suman los items del mismo tipo
+                            if(result.gameObject.CompareTag("Item"))
+                            {
+                                if(result.gameObject.GetComponentInChildren<Item>().ID == selectedObject.GetComponent<Item>().ID)
+                                {
                                 Debug.Log("Mismo ID");
                                 result.gameObject.GetComponentInChildren<Item>().numberOfObjects += selectedObject.gameObject.GetComponent<Item>().numberOfObjects;
                                 Destroy(selectedObject.gameObject);
+                                } 
                             }
-                            else
-                             {
-                                Debug.Log("ID distinto");
-                                selectedObject.transform.SetParent(lastSlot.transform);
-                                selectedObject.transform.localPosition = Vector2.zero;
-                             }
-                        } 
+                                //intercambian de posicion si son distintos
+                                else
+                                {
+                                    Debug.Log("ID distinto");
+                                    selectedObject.transform.SetParent(result.gameObject.transform.parent);
+                                    result.gameObject.transform.SetParent(lastSlot);
+                                    result.gameObject.transform.localPosition = Vector2.zero;
+                                } 
+                            }
+                        }
                     }
-                    else 
-                    {
-                        selectedObject.transform.SetParent(lastSlot.transform);
-                        selectedObject.transform.localPosition = Vector2.zero;
-                    }
-                }
+                selectedObject.transform.localPosition = Vector2.zero;
+                selectedObject = null;
             }
-            selectedObject = null;
         }
         raycastResults.Clear();
     }

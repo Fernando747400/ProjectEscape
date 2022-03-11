@@ -9,6 +9,8 @@ TagManager:
   - Switch
   - bad
   - Lever
+  - Slot
+  - Item
   layers:
   - Default
   - TransparentFX

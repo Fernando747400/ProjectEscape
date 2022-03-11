@@ -1,13 +1,44 @@
 {
-    "m_SelectedDeviceId": "",
+    "m_SelectedDeviceId": "ZD2222B6WC",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "ZD2222B6WC",
+        "name": "com.DefaultCompany.ProjectEscape",
+        "processId": 22205,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [],
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "ZD2222B6WC",
+            "name": "com.DefaultCompany.ProjectEscape",
+            "processId": 15667,
+            "exited": true
+        },
+        {
+            "deviceId": "ZD2222B6WC",
+            "name": "com.DefaultCompany.ProjectEscape",
+            "processId": 16809,
+            "exited": true
+        },
+        {
+            "deviceId": "ZD2222B6WC",
+            "name": "com.DefaultCompany.ProjectEscape",
+            "processId": 17393,
+            "exited": true
+        },
+        {
+            "deviceId": "ZD2222B6WC",
+            "name": "com.motorola.launcher3",
+            "processId": 25244,
+            "exited": false
+        },
+        {
+            "deviceId": "ZD2222B6WC",
+            "name": "com.DefaultCompany.ProjectEscape",
+            "processId": 22205,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {
@@ -41,9 +72,20 @@
         ]
     },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 0.0,
-        "MemoryWindowWidth": 0.0,
-        "MemoryTypeEnabled": [],
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
         "MemoryGroup": 2,
         "Behavior": 0
     },

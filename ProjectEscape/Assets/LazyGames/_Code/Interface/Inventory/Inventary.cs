@@ -7,22 +7,35 @@ using UnityEngine.EventSystems;
 
 public class Inventary : MonoBehaviour
 {
+    [System.Serializable]
+    public struct InventaryObjectID
+    {
+        public int id;
+        public int amount;
+        public InventaryObjectID(int id, int amount)
+        {
+            this.id = id;
+            this.amount = amount;
+        }
+    }
+
+    [SerializeField]
+    DataBase data;
     Mouse mouse;
-    
     private PointerEventData pointerData;
     private List<RaycastResult> raycastResults;
     public GraphicRaycaster graphRay;
     public Transform canvas;
     public GameObject selectedObject;
     public Transform lastSlot;
-
-
     public Vector2 CanvasScreen(Vector2 screenPos)
     { 
         Vector2 viewportPoint = Camera.main.ScreenToViewportPoint(screenPos);
         Vector2 canvasSize = canvas.GetComponent<RectTransform>().sizeDelta;
         return(new Vector2(viewportPoint.x * canvasSize.x, viewportPoint.y * canvasSize.y) - (canvasSize/2));
     }
+
+    
 
        void Prepare()
     {
@@ -65,11 +78,8 @@ public class Inventary : MonoBehaviour
                     lastSlot.GetComponent<Image>().fillCenter = false;
                     selectedObject.transform.SetParent(canvas);
                 }
+            }
         }
-
-        }
-
-        
 
         // Mueve el item de slot al seleccionarlo
         if(selectedObject != null)

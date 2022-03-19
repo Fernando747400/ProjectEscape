@@ -12,6 +12,7 @@ public class Raycast : MonoBehaviour
 	[Header("Rycast")]
     [Range(0f, 100f)]
     [SerializeField] float distanceHit;
+	[SerializeField] LayerMask usablesMask;
 
     private void Start()
     {
@@ -23,14 +24,19 @@ public class Raycast : MonoBehaviour
 		if (mouse.leftButton.wasPressedThisFrame)
 		{
 			GetViewInfo();
-		}
+        }
+        else
+        {
+			GetViewInfo();
+        }
 	}
 
     void Prepare()
 	{
 		mouse = Mouse.current;
 		try { myCamera = Camera.main; }
-		catch { myCamera = GetComponent<Camera>(); }
+		catch { myCamera = GetComponent<Camera>();}
+		Lean.Touch.LeanTouch.OnFingerDown += GetViewInfoTouch;
 	}
 
 
@@ -39,15 +45,38 @@ public class Raycast : MonoBehaviour
 		RaycastHit hit;
 		Vector2 coordinate = new Vector2(Screen.width / 2, Screen.height / 2);
 		Ray myRay = myCamera.ScreenPointToRay(coordinate);
-		if ((Physics.Raycast(myRay, out hit, distanceHit)))
+		if (Physics.Raycast(myRay, out hit, distanceHit, usablesMask.value))
 		{
 			Debug.Log("Raycast hitted: " + hit.transform.gameObject.name);
 			IUsable usable = hit.transform.GetComponent<IUsable>();
 			if (usable != null)
 			{
 				usable.Use();
-				Debug.Log("Hit a cube");
+			}
+        }
+        else
+        {
+			Debug.Log("Didn't hit anything");
+        }
+	}
+
+	void GetViewInfoTouch(Lean.Touch.LeanFinger finger)
+	{
+		RaycastHit hit;
+		Vector2 coordinate = new Vector2(finger.ScreenPosition.x, finger.ScreenPosition.y);
+		Ray myRay = myCamera.ScreenPointToRay(coordinate);
+		if (Physics.Raycast(myRay, out hit, distanceHit, usablesMask.value))
+		{
+			Debug.Log("Raycast hitted: " + hit.transform.gameObject.name);
+			IUsable usable = hit.transform.GetComponent<IUsable>();
+			if (usable != null)
+			{
+				usable.Use();
+			} else
+            {
+				Debug.Log("Didn't hit anythig on touch");
 			}
 		}
+		GameObject.Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), coordinate, Quaternion.Euler(Vector3.zero));
 	}
 }

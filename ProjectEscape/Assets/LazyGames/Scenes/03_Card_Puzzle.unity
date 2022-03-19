@@ -376,6 +376,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 23633431}
+    - target: {fileID: 3299799705944928388, guid: 84b1a3ec267861140b0594b369992ce8,
+        type: 3}
+      propertyPath: SceneToLoad
+      value: 04_Open_Room
+      objectReference: {fileID: 0}
     - target: {fileID: 3299799705944928389, guid: 84b1a3ec267861140b0594b369992ce8,
         type: 3}
       propertyPath: m_Camera

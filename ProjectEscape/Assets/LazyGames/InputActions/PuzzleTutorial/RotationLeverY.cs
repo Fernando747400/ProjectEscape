@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class RotationLeverY : TutorialInputManager
 {
@@ -7,6 +9,7 @@ public class RotationLeverY : TutorialInputManager
     private bool press;
     private bool BombillaDos;
     public Material Bombilla;
+    [SerializeField] private string SceneToLoad;
 
     private void Start()
     {
@@ -55,7 +58,14 @@ public class RotationLeverY : TutorialInputManager
         if (other.tag == "Great")
         {
             BombillaDos = true;
+            StartCoroutine(loadScene());
         }
+    }
+
+    private IEnumerator loadScene()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneToLoad);
     }
 
     protected override void MouseDrag(InputAction.CallbackContext value)

@@ -8,10 +8,15 @@ public class CameraPosition : MonoBehaviour
     [SerializeField] private GameObject camera;
     [SerializeField] private GameObject placedCamera;
 
-    
-    public  void TransformCameraToPlace()
+    Vector3 originalPosCamera;
+
+
+    public void TransformCameraToPlace(Camera mainCamera)
     {
-        
+        originalPosCamera = mainCamera.transform.position;
+
+        mainCamera.transform.position = placedCamera.transform.position;
+        mainCamera.transform.rotation = placedCamera.transform.rotation;
     }
 
 }

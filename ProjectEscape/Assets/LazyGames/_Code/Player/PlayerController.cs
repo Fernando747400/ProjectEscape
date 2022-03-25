@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     
     [SerializeField] private bool changeMouse = false;
-    [SerializeField] private bool isInteracting;
+    [SerializeField] private bool isInteracting = false;
     
     public PlayerStates _playerStates;
     public PlayerStates PlayerState
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         MovementPlayer();
         MovementCamera();
-        HandlePlayerStates();
+        
         
     }
 
@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
         mouse = Mouse.current;
 #endif
         myCharacterController = gameObject.GetComponent<CharacterController>();
+        GameManager.current.SetPlayerState += HandlePlayerStates;
     }
 
     public void ReceiveInputsPlayer(Vector2 _vectorMove, Vector2 _vectorCam, Vector2 _vectorkeyboard)
@@ -98,8 +99,7 @@ public class PlayerController : MonoBehaviour
         mouseY = mouseVector2.y * sensitivityY;
         mouseX = mouseVector2.x * sensitivityX;
         
-        Debug.Log(mouseX);
-
+  
         if (changeMouse)
         {
             transform.Rotate(Vector3.up,mouseX * Time.deltaTime);
@@ -123,8 +123,10 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void HandlePlayerStates()
+    public void HandlePlayerStates()
     {
+        isInteracting = !isInteracting;
+
         if (isInteracting)
         {
             PlayerState = PlayerStates.Interacting;
@@ -137,9 +139,22 @@ public class PlayerController : MonoBehaviour
             inputsUI.gameObject.SetActive(true);
         }
     }
+
+     //void OnEnable()
+    //{
+      //  GameManager.current.SetPlayerState += HandlePlayerStates;
+    //}
+
+    private void OnDisable()
+    {
+        GameManager.current.SetPlayerState -= HandlePlayerStates;
+    }
+
+
 }
-    
-    public enum PlayerStates
+
+
+public enum PlayerStates
     {
         NoInteracting = 0,
         Interacting = 1,

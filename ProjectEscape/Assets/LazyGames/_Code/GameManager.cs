@@ -26,4 +26,7 @@ public class GameManager : MonoBehaviour
     public event Action ShowCardConsole;
     public void showCardConsole() => ShowCardConsole.Invoke();
 
+    public event Action SetPlayerState;
+    public void setPlayerState() => SetPlayerState.Invoke();
+
 }

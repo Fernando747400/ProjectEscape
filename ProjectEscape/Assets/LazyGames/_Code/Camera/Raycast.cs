@@ -27,7 +27,7 @@ public class Raycast : MonoBehaviour
         }
         else
         {
-			GetViewInfo();
+			//GetViewInfo();
         }
 	}
 
@@ -53,10 +53,7 @@ public class Raycast : MonoBehaviour
 			if (usable != null)
 			{
 				usable.Use();
-				if (cameraPosition != null)
-				{
-					cameraPosition.TransformCameraToPlace();
-				}
+			
 		}
         }
         else
@@ -74,12 +71,20 @@ public class Raycast : MonoBehaviour
 		if (Physics.Raycast(myRay, out hit, distanceHit, usablesMask.value))
 		{
 			Debug.Log("Raycast hitted: " + hit.transform.gameObject.name);
+			
 			IUsable usable = hit.transform.GetComponent<IUsable>();
 			CameraPosition cameraPosition = hit.transform.GetComponent<CameraPosition>();
+			
 			if (usable != null)
 			{
 				usable.Use();
-			} else
+				if (cameraPosition != null)
+				{
+					Debug.Log("ChangeCamera Pos");
+					cameraPosition.TransformCameraToPlace(myCamera);
+				}
+			} 
+			else
             {
 				Debug.Log("Didn't hit anythig on touch");
 			}

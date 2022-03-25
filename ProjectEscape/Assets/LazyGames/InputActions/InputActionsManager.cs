@@ -12,6 +12,7 @@ public class InputActionsManager : MonoBehaviour
     
     private Vector2 vectorMovInput;
     private Vector2 vectorCamInpt;
+    private Vector2 vector2KeyBoard;
     void Awake()
     {
         playerControls = new PlayerControls();
@@ -19,6 +20,8 @@ public class InputActionsManager : MonoBehaviour
 
         playerActions.Move.performed += ctx => vectorMovInput = ctx.ReadValue<Vector2>();
         playerActions.Look.performed += ctx => vectorCamInpt = ctx.ReadValue<Vector2>();
+        playerActions.MoveKeyBoard.performed += ctx => vector2KeyBoard = ctx.ReadValue<Vector2>();
+
 
     }
     void Start()
@@ -29,7 +32,7 @@ public class InputActionsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerController.ReceiveInputsPlayer(vectorMovInput,vectorCamInpt);
+        playerController.ReceiveInputsPlayer(vectorMovInput,vectorCamInpt, vector2KeyBoard);
     }
 
     private void OnEnable()

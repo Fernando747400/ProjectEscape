@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/LazyGames/InputActions/PLayerCamera.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LazyGames/_Code/Camera/CameraPosition.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="265Su5TZ3RGcwvvL3i8Fz0gDDED" />
   <component name="ProjectViewState">
@@ -56,6 +57,8 @@
       <updated>1646712178106</updated>
       <workItem from="1646712198285" duration="868000" />
       <workItem from="1646713142107" duration="3579000" />
+      <workItem from="1647900549618" duration="3797000" />
+      <workItem from="1648168398309" duration="5498000" />
     </task>
     <servers />
   </component>

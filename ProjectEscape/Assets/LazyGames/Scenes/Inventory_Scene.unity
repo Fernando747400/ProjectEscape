@@ -684,6 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b6c36423d0aed24899e7c1b88b497f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
   graphRay: {fileID: 1149991568}
   canvas: {fileID: 1080162310}
   selectedObject: {fileID: 0}

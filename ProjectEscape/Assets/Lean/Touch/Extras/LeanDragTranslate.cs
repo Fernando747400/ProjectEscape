@@ -12,10 +12,13 @@ namespace Lean.Touch
 		/// <summary>The method used to find fingers to use with this component. See LeanFingerFilter documentation for more information.</summary>
 		public LeanFingerFilter Use = new LeanFingerFilter(true);
 
+		
 		/// <summary>The camera the translation will be calculated using.
 		/// None/null = MainCamera.</summary>
-		public Camera Camera { set { _camera = value; } get { return _camera; } } [FSA("Camera")] [SerializeField] private Camera _camera;
-
+		public Camera Camera { set { _camera = value; } get { return _camera; } } 
+		[FSA("Camera")]
+		[SerializeField] private Camera _camera;
+		[SerializeField] public bool EnableTransform = false;
 		/// <summary>The movement speed will be multiplied by this.
 		/// -1 = Inverted Controls.</summary>
 		public float Sensitivity { set { sensitivity = value; } get { return sensitivity; } } [FSA("Sensitivity")] [SerializeField] private float sensitivity = 1.0f;
@@ -65,47 +68,53 @@ namespace Lean.Touch
 
 		protected virtual void Update()
 		{
-			// Store
-			var oldPosition = transform.localPosition;
+			// if (EnableTransform)
+			// {
 
-			// Get the fingers we want to use
-			var fingers = Use.UpdateAndGetFingers();
 
-			// Calculate the screenDelta value based on these fingers
-			var screenDelta = LeanGesture.GetScreenDelta(fingers);
+				// Store
+				var oldPosition = transform.localPosition;
 
-			if (screenDelta != Vector2.zero)
-			{
-				// Perform the translation
-				if (transform is RectTransform)
+				// Get the fingers we want to use
+				var fingers = Use.UpdateAndGetFingers();
+
+				// Calculate the screenDelta value based on these fingers
+				var screenDelta = LeanGesture.GetScreenDelta(fingers);
+
+				if (screenDelta != Vector2.zero)
 				{
-					TranslateUI(screenDelta);
+					
+						// Perform the translation
+						if (transform is RectTransform)
+						{
+							TranslateUI(screenDelta);
+						}
+						else
+						{
+							Translate(screenDelta);
+						}
 				}
-				else
+
+				// Increment
+				remainingTranslation += transform.localPosition - oldPosition;
+
+				// Get t value
+				var factor = LeanHelper.GetDampenFactor(Damping, Time.deltaTime);
+
+				// Dampen remainingDelta
+				var newRemainingTranslation = Vector3.Lerp(remainingTranslation, Vector3.zero, factor);
+
+				// Shift this transform by the change in delta
+				transform.localPosition = oldPosition + remainingTranslation - newRemainingTranslation;
+
+				if (fingers.Count == 0 && Inertia > 0.0f && Damping > 0.0f)
 				{
-					Translate(screenDelta);
+					newRemainingTranslation = Vector3.Lerp(newRemainingTranslation, remainingTranslation, Inertia);
 				}
-			}
 
-			// Increment
-			remainingTranslation += transform.localPosition - oldPosition;
-
-			// Get t value
-			var factor = LeanHelper.GetDampenFactor(Damping, Time.deltaTime);
-
-			// Dampen remainingDelta
-			var newRemainingTranslation = Vector3.Lerp(remainingTranslation, Vector3.zero, factor);
-
-			// Shift this transform by the change in delta
-			transform.localPosition = oldPosition + remainingTranslation - newRemainingTranslation;
-
-			if (fingers.Count == 0 && Inertia > 0.0f && Damping > 0.0f)
-			{
-				newRemainingTranslation = Vector3.Lerp(newRemainingTranslation, remainingTranslation, Inertia);
-			}
-
-			// Update remainingDelta with the dampened value
-			remainingTranslation = newRemainingTranslation;
+				// Update remainingDelta with the dampened value
+				remainingTranslation = newRemainingTranslation;
+			// }
 		}
 
 		private void TranslateUI(Vector2 screenDelta)

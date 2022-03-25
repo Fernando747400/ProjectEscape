@@ -77,6 +77,10 @@ namespace Lean.Common
 
 				return false;
 			}
+			set
+            {
+				selfSelected = value;
+            }
 		}
 
 		public static int IsSelectedCount

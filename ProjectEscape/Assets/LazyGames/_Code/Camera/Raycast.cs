@@ -49,10 +49,15 @@ public class Raycast : MonoBehaviour
 		{
 			Debug.Log("Raycast hitted: " + hit.transform.gameObject.name);
 			IUsable usable = hit.transform.GetComponent<IUsable>();
+			CameraPosition cameraPosition = hit.transform.GetComponent<CameraPosition>();
 			if (usable != null)
 			{
 				usable.Use();
-			}
+				if (cameraPosition != null)
+				{
+					cameraPosition.TransformCameraToPlace();
+				}
+		}
         }
         else
         {
@@ -64,11 +69,13 @@ public class Raycast : MonoBehaviour
 	{
 		RaycastHit hit;
 		Vector2 coordinate = new Vector2(finger.ScreenPosition.x, finger.ScreenPosition.y);
+		Debug.Log(coordinate);
 		Ray myRay = myCamera.ScreenPointToRay(coordinate);
 		if (Physics.Raycast(myRay, out hit, distanceHit, usablesMask.value))
 		{
 			Debug.Log("Raycast hitted: " + hit.transform.gameObject.name);
 			IUsable usable = hit.transform.GetComponent<IUsable>();
+			CameraPosition cameraPosition = hit.transform.GetComponent<CameraPosition>();
 			if (usable != null)
 			{
 				usable.Use();

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,11 +21,17 @@ public class PlayerController : MonoBehaviour
     // Camera and Player Movement
     float cameraLimit = 85f;
     float xRotation = 0;
-    float mouseX, mouseY;
+    float uiCamX, uiCamY;
+    
+    private Keyboard keyboard;
+    private Mouse mouse;
 
     private Vector2 myVector2Move;
     private Vector2 myVector2Cam;
+    private Vector2 myVector2Keyboard;
 
+    
+    [SerializeField] private bool changeMouse = false;
     [SerializeField] private bool isInteracting;
     
     public PlayerStates _playerStates;
@@ -43,38 +50,77 @@ public class PlayerController : MonoBehaviour
         MovementPlayer();
         MovementCamera();
         HandlePlayerStates();
+        
     }
 
     void SetPlayer()
     {
+#if UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX || UNITY_STANDALONE_LINUX || UNITY_EDITOR
+        keyboard = Keyboard.current;
+        mouse = Mouse.current;
+#endif
         myCharacterController = gameObject.GetComponent<CharacterController>();
     }
 
-    public void ReceiveInputsPlayer(Vector2 _vectorMove, Vector2 _vectorCam)
+    public void ReceiveInputsPlayer(Vector2 _vectorMove, Vector2 _vectorCam, Vector2 _vectorkeyboard)
     {
-        
+        myVector2Keyboard = _vectorkeyboard;
         myVector2Move = _vectorMove;
         myVector2Cam = _vectorCam;
         
-        mouseX = myVector2Cam.x * sensitivityX;
-        mouseY = myVector2Cam.y * sensitivityY;
+        uiCamX = myVector2Cam.x * sensitivityX;
+        uiCamY = myVector2Cam.y * sensitivityY;
     }
     private void MovementPlayer()
     {
+        //UI Input
         Vector3 horizontalVelocity = (transform.right * myVector2Move.x + transform.forward * myVector2Move.y) * moveSpeed;
+        
+        //Keyboard Input
+        if (keyboard != null)
+        {
+            if (keyboard.anyKey.isPressed)
+            {
+               horizontalVelocity = (transform.right * myVector2Keyboard.x + transform.forward * myVector2Keyboard.y) * moveSpeed;
+            }
+        }
+            
         myCharacterController.Move(horizontalVelocity * Time.deltaTime);
     }
 
     private void MovementCamera()
     {
-       transform.Rotate(Vector3.up,mouseX * Time.deltaTime);
-       xRotation -= mouseY;
-       xRotation = Mathf.Clamp(xRotation, -cameraLimit, cameraLimit);
+        Vector2 mouseVector2 = mouse.delta.ReadValue();
+        
+        float mouseY = 0;
+        float mouseX = 0;
+        
+        mouseY = mouseVector2.y * sensitivityY;
+        mouseX = mouseVector2.x * sensitivityX;
+        
+        Debug.Log(mouseX);
 
-       Vector3 targetRotation = transform.eulerAngles;
-       targetRotation.x = xRotation;
-       transformCamera.eulerAngles = targetRotation;
-       
+        if (changeMouse)
+        {
+            transform.Rotate(Vector3.up,mouseX * Time.deltaTime);
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -cameraLimit, cameraLimit);
+
+            Vector3 targetRotation = transform.eulerAngles;
+            targetRotation.x = xRotation;
+            transformCamera.eulerAngles = targetRotation;
+        }
+        else
+        {
+            transform.Rotate(Vector3.up,uiCamX * Time.deltaTime);
+            xRotation -= uiCamY;
+            xRotation = Mathf.Clamp(xRotation, -cameraLimit, cameraLimit);
+
+            Vector3 targetRotation = transform.eulerAngles;
+            targetRotation.x = xRotation;
+            transformCamera.eulerAngles = targetRotation;
+        }
+        
     }
 
     private void HandlePlayerStates()

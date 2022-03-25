@@ -49,10 +49,15 @@ public class Raycast : MonoBehaviour
 		{
 			Debug.Log("Raycast hitted: " + hit.transform.gameObject.name);
 			IUsable usable = hit.transform.GetComponent<IUsable>();
+			CameraPosition cameraPosition = hit.transform.GetComponent<CameraPosition>();
 			if (usable != null)
 			{
 				usable.Use();
-			}
+				if (cameraPosition != null)
+				{
+					cameraPosition.TransformCameraToPlace();
+				}
+		}
         }
         else
         {
@@ -69,6 +74,7 @@ public class Raycast : MonoBehaviour
 		{
 			Debug.Log("Raycast hitted: " + hit.transform.gameObject.name);
 			IUsable usable = hit.transform.GetComponent<IUsable>();
+			CameraPosition cameraPosition = hit.transform.GetComponent<CameraPosition>();
 			if (usable != null)
 			{
 				usable.Use();

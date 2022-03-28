@@ -29,4 +29,7 @@ public class GameManager : MonoBehaviour
     public event Action SetPlayerState;
     public void setPlayerState() => SetPlayerState.Invoke();
 
+    public event Action ActivateInteracting;
+    public void activateInteracting() => ActivateInteracting.Invoke();
+
 }

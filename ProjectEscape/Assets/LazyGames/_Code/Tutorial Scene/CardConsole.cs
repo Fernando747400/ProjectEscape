@@ -27,6 +27,7 @@ public class CardConsole : MonoBehaviour, IUsable
     public void Use()
     {
         GameManager.current.setPlayerState();
+        GameManager.current.activateInteracting();
         //SceneManager.LoadScene(sceneToLoad);
     }
 }

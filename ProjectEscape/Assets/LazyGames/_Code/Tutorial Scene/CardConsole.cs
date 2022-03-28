@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class CardConsole : MonoBehaviour, IUsable
 {
     public bool CanInteract { get => CanInteract; set => CanInteract = value; }
-
-    [SerializeField] private string sceneToLoad;
    
     public void Start()
     {
@@ -28,7 +26,6 @@ public class CardConsole : MonoBehaviour, IUsable
     {
         GameManager.current.setPlayerState();
         GameManager.current.activateInteracting();
-        SceneManager.LoadScene(sceneToLoad);
     }
     
 }

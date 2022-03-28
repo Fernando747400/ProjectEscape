@@ -1265,8 +1265,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6888909, y: 1, z: 0}
-  m_Center: {x: 0.017351722, y: 0, z: 1.488307}
+  m_Size: {x: 0.6888909, y: 0, z: 0}
+  m_Center: {x: 0.017351722, y: 0.12767053, z: 1.488307}
 --- !u!1 &41076252244278321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2198,6 +2198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xvalue: 0
+  myLRotation: {x: 0, y: 0, z: 0}
   Palanca: {fileID: 41076252915010563}
   maxRotate: 0
   minRotate: -180
@@ -2632,7 +2633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1706766129545200943
 Transform:
   m_ObjectHideFlags: 0

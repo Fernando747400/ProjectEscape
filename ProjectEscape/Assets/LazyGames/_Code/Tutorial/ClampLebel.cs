@@ -8,6 +8,8 @@ public class ClampLebel : MonoBehaviour
 {
     float pitch;
     public float xvalue;
+
+    public Vector3 myLRotation;
     public GameObject Palanca;
     private LeanTwistRotateAxis LeanR;
     public int maxRotate, minRotate;
@@ -22,7 +24,7 @@ public class ClampLebel : MonoBehaviour
         
         if(xvalue == maxRotate)
         {
-            xvalue += Palanca.transform.rotation.x;
+            xvalue += Palanca.transform.localEulerAngles.x;
         }
         if(xvalue != 0)
         {
@@ -31,6 +33,6 @@ public class ClampLebel : MonoBehaviour
         }
         pitch = Mathf.Clamp(xvalue, minRotate, maxRotate);
 
-        transform.eulerAngles = new Vector3(pitch, 0.0f, 0.0f);
+        transform.localEulerAngles = new Vector3(pitch, 0.0f, 0.0f);
     }
 }

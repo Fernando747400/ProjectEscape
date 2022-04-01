@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraPosition : MonoBehaviour
 {
-    // Start is called before the first frame update
     
     [SerializeField] private Camera camera;
     [SerializeField] private GameObject placedCamera;

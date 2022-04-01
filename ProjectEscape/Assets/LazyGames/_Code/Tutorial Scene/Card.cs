@@ -9,6 +9,7 @@ public class Card : MonoBehaviour, IUsable
     public void Use()
     {
         GameManager.current.showCardConsole();
+        GameManager.current.takeObject();
         //GameManager.current.setPlayerState();
         this.gameObject.SetActive(false);
     }

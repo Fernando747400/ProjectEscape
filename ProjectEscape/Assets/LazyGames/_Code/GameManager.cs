@@ -32,4 +32,8 @@ public class GameManager : MonoBehaviour
     public event Action ActivateInteracting;
     public void activateInteracting() => ActivateInteracting.Invoke();
 
+    public event Action TakeObject;
+    public void takeObject() => TakeObject.Invoke();
+
+
 }

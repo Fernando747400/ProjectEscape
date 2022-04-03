@@ -2548,6 +2548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 2031891677}
+  playerController: {fileID: 1359362894}
 --- !u!114 &1359362894 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6120263173376937041, guid: 5d9df1ef9d6c85b4bad2c6982be289b8,

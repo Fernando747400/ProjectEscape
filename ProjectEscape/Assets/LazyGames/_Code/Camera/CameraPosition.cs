@@ -1,33 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraPosition : MonoBehaviour
 {
     
-    [SerializeField] private Camera camera;
-    [SerializeField] private GameObject placedCamera;
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private Camera puzzleCamera;
     
-    private Camera playerCamera;
-    Vector3 originalPosCamera;
-
-
-    public void TransformCameraToPlace(Camera mainCamera)
+    public void SwitchCameras()
     {
-        playerCamera = Camera.main;
-
-        originalPosCamera = playerCamera.transform.position;
-
-        mainCamera.transform.position = new Vector3(0, 0, 0);
-        mainCamera.transform.rotation = new Quaternion();
-        mainCamera.transform.position = placedCamera.transform.position;
-        mainCamera.transform.rotation = placedCamera.transform.rotation;
+        if (playerCamera.isActiveAndEnabled)
+        {
+            playerCamera.gameObject.SetActive(false);
+            puzzleCamera.gameObject.SetActive(true);
+        } else
+        {
+            playerCamera.gameObject.SetActive(true);
+            puzzleCamera.gameObject.SetActive(false);
+        }
     }
-
-    public void ReturnCameraToPlayer()
-    {
-        playerCamera.transform.position = originalPosCamera;
-    }
-
-
 }

@@ -173,6 +173,7 @@ public class PlayerController : MonoBehaviour
         isInteracting = false;
     }
 
+    /*
     void OnEnable()
     {
       GameManager.current.SetPlayerState += HandlePlayerStates;
@@ -182,7 +183,7 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.current.SetPlayerState -= HandlePlayerStates;
     }
-
+    */
 }
 
 

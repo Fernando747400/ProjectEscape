@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController current;
+    
+    
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private GameObject inputsUI;
     
@@ -48,6 +51,9 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
+        current = this;
+        DontDestroyOnLoad(this.gameObject);
+        Application.targetFrameRate = 30;
         SetPlayer();   
     }
     private void FixedUpdate()
@@ -163,19 +169,35 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public bool GetPlayerState(PlayerStates stateTarget)
+    {
+        if (stateTarget == PlayerState)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+        return false;
+    }
+
     public void ActivateInteracting()
     {
         isInteracting = true;
+        HandlePlayerStates();
     }
 
     public void DeactivateInteracting()
     {
         isInteracting = false;
+        HandlePlayerStates();
     }
 
     void OnEnable()
     {
-      GameManager.current.SetPlayerState += HandlePlayerStates;
+      // GameManager.current.SetPlayerState += HandlePlayerStates;
     }
 
     private void OnDisable()

@@ -33,7 +33,7 @@ public class Raycast : MonoBehaviour
     {
 		if (mouse!= null && mouse.rightButton.wasPressedThisFrame)
 		{
-			GetViewInfo();
+			// GetViewInfo();
         }
     }
 
@@ -42,8 +42,12 @@ public class Raycast : MonoBehaviour
 		try { myCamera = Camera.main; }
 		catch { myCamera = GetComponent<Camera>(); Log("Didn't find a camera. Tried searching for one on this script parent"); }
 
+		
 		try { mouse = Mouse.current; }
 		catch { LeanTouch.OnFingerDown += GetViewInfoTouch; Log("No mouse found, switched to LeanTouch Instead");}		
+		
+		
+		LeanTouch.OnFingerDown += GetViewInfoTouch;
 	}
     
 	void GetViewInfo()
@@ -79,13 +83,13 @@ public class Raycast : MonoBehaviour
 	{
 		if (playerController.PlayerState == PlayerStates.NoInteracting)
 		{
-			
 			if (!finger.IsOverGui)
 			{
-				Log("Esta sacando el raycast?");
+				// Log("Esta sacando el raycast?");
 				Log("Finger is NOT GUI");
 				RaycastHit hit;
 				Vector2 coordinate = new Vector2(finger.ScreenPosition.x, finger.ScreenPosition.y);
+				Log("Positino ddddddFinger in screen " + coordinate);
 				Ray myRay = myCamera.ScreenPointToRay(coordinate);
 
 				if (Physics.Raycast(myRay, out hit, maxDistance, usablesMask.value))

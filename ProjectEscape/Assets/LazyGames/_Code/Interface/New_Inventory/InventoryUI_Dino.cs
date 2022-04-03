@@ -37,11 +37,11 @@ public class InventoryUI_Dino : MonoBehaviour
     
 
      private void OnEnable() {
-         GameManager.current.TakeObject += AddItemsToList;
+         // GameManager.current.TakeObject += AddItemsToList;
         
     }
     private void OnDisable() {
-        GameManager.current.TakeObject -= AddItemsToList;
+        // GameManager.current.TakeObject -= AddItemsToList;
     }
 
 

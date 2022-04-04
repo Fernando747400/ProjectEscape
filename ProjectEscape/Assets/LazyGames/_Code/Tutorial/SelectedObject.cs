@@ -8,22 +8,46 @@ using Lean.Common;
 public class SelectedObject : MonoBehaviour
 {
     [SerializeField] private Camera myCamera;
+    [SerializeField] private BoxCollider PuzzleColliderBox;
+    [SerializeField] private LeanDragTranslate[] myLeanDrags;
 
     private LeanDragTranslate lean;
     private void Start()
     {
         LeanTouch.OnFingerDown += GetViewInfoTouch;
-        lean = this.GetComponent<LeanDragTranslate>();
-        lean.enabled = false;
-        // Debug.Log(lean.EnableTransform);
+        LeanTouch.OnFingerUp += TurnOffLeans;
+       
+
+        for (int i = 0; i < myLeanDrags.Length; i++)
+        {
+            myLeanDrags[i].enabled = false;
+        }
     }
 
-    public void SetSelectable()
+    private void Update()
     {
-        
+        if (PlayerController.current.GetPlayerState(PlayerStates.Interacting))
+        {
+            PuzzleColliderBox.enabled = false;
+        }
+        else
+        {
+            PuzzleColliderBox.enabled = true;
+        }
     }
 
-
+    void TurnOffLeans(LeanFinger finger)
+    {
+        if (finger.Up)
+        {
+            for (int i = 0; i < myLeanDrags.Length; i++)
+            {
+                myLeanDrags[i].enabled = false;
+            }
+        }
+       
+    }
+    
     void GetViewInfoTouch(LeanFinger finger)
     {
         RaycastHit hit;
@@ -32,19 +56,17 @@ public class SelectedObject : MonoBehaviour
         Ray myRay = myCamera.ScreenPointToRay(coordinate);
         if (Physics.Raycast(myRay, out hit, 25f))
         {
-            LeanDragTranslate _lean = hit.transform.GetComponent<LeanDragTranslate>();
-            if (_lean != null)
+            if (finger.Down)
             {
-                _lean.enabled = true;
-                
-            }
-            else if(_lean == null)
-            {
-                lean = this.GetComponent<LeanDragTranslate>();
-                lean.enabled = false;
+                LeanDragTranslate _lean = hit.transform.GetComponent<LeanDragTranslate>();
+                if (_lean != null)
+                {
+                    _lean.enabled = true;
+                }   
             }
         }
 
     }
 
+    
 }

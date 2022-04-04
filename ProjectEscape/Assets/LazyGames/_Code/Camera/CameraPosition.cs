@@ -1,17 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraPosition : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] private GameObject camera;
-    [SerializeField] private GameObject placedCamera;
-
     
-    public  void TransformCameraToPlace()
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private Camera puzzleCamera;
+    
+    public void SwitchCameras()
     {
-        
+        if (playerCamera.isActiveAndEnabled)
+        {
+            playerCamera.gameObject.SetActive(false);
+            puzzleCamera.gameObject.SetActive(true);
+        } else
+        {
+            playerCamera.gameObject.SetActive(true);
+            puzzleCamera.gameObject.SetActive(false);
+        }
     }
-
 }

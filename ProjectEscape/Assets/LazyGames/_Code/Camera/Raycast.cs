@@ -1,89 +1,133 @@
 using System.Collections;
 using System.Collections.Generic;
+using Lean.Touch;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+//[|87
 public class Raycast : MonoBehaviour
 {
 
 	Mouse mouse;
 	Camera myCamera;
 
-	[Header("Rycast")]
+	[Header("Raycast distance")]
     [Range(0f, 100f)]
-    [SerializeField] float distanceHit;
+    [SerializeField] float maxDistance;
+
+	[Header("Usables Mask")]
 	[SerializeField] LayerMask usablesMask;
+
+	[Header("Dependencies")]
+	[SerializeField] PlayerController playerController;
+
+	[Header("Debugging")]
+	[SerializeField] Logger logger;
+
 
     private void Start()
     {
-		Prepare();
+	    Prepare();
     }
 
     void Update()
     {
-		if (mouse.leftButton.wasPressedThisFrame)
+		if (mouse!= null && mouse.rightButton.wasPressedThisFrame)
 		{
-			GetViewInfo();
+			// GetViewInfo();
         }
-        else
-        {
-			GetViewInfo();
-        }
-	}
+    }
 
     void Prepare()
 	{
-		mouse = Mouse.current;
 		try { myCamera = Camera.main; }
-		catch { myCamera = GetComponent<Camera>();}
-		Lean.Touch.LeanTouch.OnFingerDown += GetViewInfoTouch;
+		catch { myCamera = GetComponent<Camera>(); Log("Didn't find a camera. Tried searching for one on this script parent"); }
+
+		
+		try { mouse = Mouse.current; }
+		catch { LeanTouch.OnFingerDown += GetViewInfoTouch; Log("No mouse found, switched to LeanTouch Instead");}		
+		
+		
+		LeanTouch.OnFingerDown += GetViewInfoTouch;
 	}
-
-
+    
 	void GetViewInfo()
 	{
-		RaycastHit hit;
-		Vector2 coordinate = new Vector2(Screen.width / 2, Screen.height / 2);
-		Ray myRay = myCamera.ScreenPointToRay(coordinate);
-		if (Physics.Raycast(myRay, out hit, distanceHit, usablesMask.value))
-		{
-			Debug.Log("Raycast hitted: " + hit.transform.gameObject.name);
-			IUsable usable = hit.transform.GetComponent<IUsable>();
-			CameraPosition cameraPosition = hit.transform.GetComponent<CameraPosition>();
-			if (usable != null)
-			{
-				usable.Use();
-				if (cameraPosition != null)
-				{
-					cameraPosition.TransformCameraToPlace();
-				}
-		}
-        }
-        else
+		if(playerController.PlayerState == PlayerStates.NoInteracting)
         {
-			Debug.Log("Didn't hit anything");
+			RaycastHit hit;
+			Vector2 coordinate = new Vector2(Screen.width / 2, Screen.height / 2); //Gets the position of the middle of the screen
+			Ray myRay = myCamera.ScreenPointToRay(coordinate); //Defines a ray from the given screen coordinate
+			if (Physics.Raycast(myRay, out hit, maxDistance, usablesMask.value)) //Raycast only interacts with objects that are on the Usables layer mask.
+			{
+				Log("Raycast hitted: " + hit.transform.gameObject.name);
+				IUsable usable = hit.transform.GetComponent<IUsable>(); //Double checks to see if the object has the IUsable interface inherited. 
+				IUsable cameraUsable = hit.transform.GetComponent<CameraSwitcher>(); //Checks to see if we need to move the camera 
+				if (usable != null)
+				{
+					usable.Use();
+				}
+				if (cameraUsable != null)
+				{
+					cameraUsable.Use();
+					Log("Changed camera Position");
+				}
+			}
+			else
+			{
+				Log("Didn't hit anything on the usables mask");
+			}
         }
 	}
 
-	void GetViewInfoTouch(Lean.Touch.LeanFinger finger)
+	void GetViewInfoTouch(LeanFinger finger)
 	{
-		RaycastHit hit;
-		Vector2 coordinate = new Vector2(finger.ScreenPosition.x, finger.ScreenPosition.y);
-		Debug.Log(coordinate);
-		Ray myRay = myCamera.ScreenPointToRay(coordinate);
-		if (Physics.Raycast(myRay, out hit, distanceHit, usablesMask.value))
+		if (playerController.PlayerState == PlayerStates.NoInteracting)
 		{
-			Debug.Log("Raycast hitted: " + hit.transform.gameObject.name);
-			IUsable usable = hit.transform.GetComponent<IUsable>();
-			CameraPosition cameraPosition = hit.transform.GetComponent<CameraPosition>();
-			if (usable != null)
+			if (!finger.IsOverGui)
 			{
-				usable.Use();
-			} else
-            {
-				Debug.Log("Didn't hit anythig on touch");
+				Log("Esta sacando el raycast?");
+				// Log("Finger is NOT GUI");
+				RaycastHit hit;
+				Vector2 coordinate = new Vector2(finger.ScreenPosition.x, finger.ScreenPosition.y);
+				// Log("Position Finger in screen " + coordinate);
+				Ray myRay = myCamera.ScreenPointToRay(coordinate);
+
+				if (Physics.Raycast(myRay, out hit, maxDistance, usablesMask.value))
+				{
+					Log("Raycast hitted: " + hit.transform.gameObject.name);
+
+					IUsable usable = hit.transform.GetComponent<IUsable>(); ////Double checks to see if the object has the IUsable interface inherited. 
+					IUsable cameraUsable = hit.transform.GetComponent<CameraSwitcher>(); //Checks to see if we need to move the camera 
+					InteractableObjects interactableObjects = hit.transform.GetComponent<InteractableObjects>();
+					
+					if (usable != null)
+					{
+						usable.Use();
+						if (interactableObjects != null)
+						{
+							interactableObjects.SendInfoObjectToInventory();
+						}
+					}
+
+					if (cameraUsable != null)
+					{
+						cameraUsable.Use();
+						Log("Changed camera Position");
+					}
+				}
+                else { 
+						Log("Didn't hit anythig with touch on the usables mask");
+					}
 			}
 		}
-		GameObject.Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), coordinate, Quaternion.Euler(Vector3.zero));
 	}
+
+	void Log(object message)
+    {
+		if (logger)
+		{
+			logger.Log(message, this);
+		}
+    }
 }
+

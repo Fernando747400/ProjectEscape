@@ -24,6 +24,16 @@ public class GameManager : MonoBehaviour
 
 
     public event Action ShowCardConsole;
-    public void showCardConsole() => ShowCardConsole.Invoke();
+    public void showCardConsole() => ShowCardConsole?.Invoke();
+
+    public event Action SetPlayerState;
+    public void setPlayerState() => SetPlayerState?.Invoke();
+
+    public event Action ActivateInteracting;
+    public void activateInteracting() => ActivateInteracting?.Invoke();
+
+    public event Action TakeObject;
+    public void takeObject() => TakeObject?.Invoke();
+
 
 }

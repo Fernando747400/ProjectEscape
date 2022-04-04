@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "ZD2222B6WC",
+    "m_SelectedDeviceId": "STELLARP30008060",
     "m_SelectedPackage": {
-        "deviceId": "ZD2222B6WC",
+        "deviceId": "STELLARP30008060",
         "name": "com.DefaultCompany.ProjectEscape",
-        "processId": 22205,
+        "processId": 32658,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -36,6 +36,18 @@
             "deviceId": "ZD2222B6WC",
             "name": "com.DefaultCompany.ProjectEscape",
             "processId": 22205,
+            "exited": false
+        },
+        {
+            "deviceId": "STELLARP30008060",
+            "name": "com.DefaultCompany.ProjectEscape",
+            "processId": 29403,
+            "exited": false
+        },
+        {
+            "deviceId": "STELLARP30008060",
+            "name": "com.DefaultCompany.ProjectEscape",
+            "processId": 32658,
             "exited": false
         }
     ],

@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour, IUsable
+public class Card : InteractableObjects, IUsable
 {
+    
     public bool CanInteract { get => CanInteract; set => CanInteract = value; }
 
     public void Use()
@@ -11,4 +12,7 @@ public class Card : MonoBehaviour, IUsable
         GameManager.current.showCardConsole();
         this.gameObject.SetActive(false);
     }
+    
+    
+    
 }

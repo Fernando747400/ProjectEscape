@@ -5,12 +5,13 @@ using UnityEngine;
 public class CameraSwitcher : MonoBehaviour, IUsable
 {
     [SerializeField] CameraHandler cameraHandler;
-    [SerializeField] Camera puzzleCamera;
+    [SerializeField] int cameraToSwitch;
 
     public bool CanInteract { get => CanInteract; set => CanInteract = value; }
 
     public void Use()
     {
-        cameraHandler.switchCamera(puzzleCamera);
+        cameraHandler.SelectCamera(cameraToSwitch);
+        
     }
 }

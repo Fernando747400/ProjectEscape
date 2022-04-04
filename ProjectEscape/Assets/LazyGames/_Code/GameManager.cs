@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 30;
     }
 
-    public event Action StartTutorial;
-    public void startTutorial() => StartTutorial?.Invoke();
+    public event Action OpenShipDoor;
+    public void openShipDoor() => OpenShipDoor.Invoke();
 
 
     public event Action FinishTutorial;

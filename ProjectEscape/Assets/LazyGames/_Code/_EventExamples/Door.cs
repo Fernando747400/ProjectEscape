@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+
+    public Vector3 targetPosition;
+
+    private void Start() {
+        
+        GameManager.current.OpenShipDoor += Open;
+    }
     private void OnEnable()
     {
-        GameManager.current.StartTutorial += Open;
     }
 
     private void OnDisable()
     {
-        GameManager.current.StartTutorial -= Open;
+        GameManager.current.OpenShipDoor -= Open;
     }
 
-    void Open()
+    public void Open()
     {
-        iTween.MoveTo(this.gameObject, iTween.Hash("position",new Vector3(2,4,0), "time",5));
+        iTween.MoveTo(this.gameObject, iTween.Hash("position",targetPosition, "time",5));
     }
 }

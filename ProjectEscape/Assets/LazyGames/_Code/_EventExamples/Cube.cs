@@ -17,6 +17,6 @@ public class Cube : MonoBehaviour,IUsable
     public void Use()
     {
         Debug.Log("Mouse enter");
-        gameManager.startTutorial();
+        // gameManager.startTutorial();
     }
 }

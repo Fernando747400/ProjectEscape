@@ -4,20 +4,49 @@ using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
 {
-    public Camera mainCamera;
+    private Canvas canvas;
+    public static CameraHandler current;
+    public Camera playerCamera;
+
+    public Camera[] camerasInScene;
     public PlayerController playerController;
 
-    public void switchCamera(Camera puzzleCamera)
+    private void Awake() {
+        current = this;
+    }
+
+     private void Start() {
+
+         TurnOff();
+    }
+    private void SwitchCamera(Camera cameraToSwitch)
     {
-        mainCamera.gameObject.SetActive(false);
-        puzzleCamera.gameObject.SetActive(true);
+        
+        Camera.main.gameObject.SetActive(false);
+        TurnOff();
+        cameraToSwitch.gameObject.SetActive(true);
         playerController.ActivateInteracting();
         playerController.HandlePlayerStates();
     }
 
-    public void switchToMainCamera()
+    public void SwitchToPlayerCamera()
     {
-        Camera.main.gameObject.SetActive(false);
-        mainCamera.gameObject.SetActive(true);
+        TurnOff();
+        playerCamera.gameObject.SetActive(true);
+    }
+
+
+    public void SelectCamera(int placeInArray)
+    {
+        SwitchCamera(camerasInScene[placeInArray]);
+        
+    }
+
+    void TurnOff()
+    {
+         for (int i = 0; i < camerasInScene.Length; i++)
+        {
+             camerasInScene[i].gameObject.SetActive(false);
+        } 
     }
 }

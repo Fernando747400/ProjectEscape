@@ -85,11 +85,11 @@ public class Raycast : MonoBehaviour
 		{
 			if (!finger.IsOverGui)
 			{
-				// Log("Esta sacando el raycast?");
-				Log("Finger is NOT GUI");
+				Log("Esta sacando el raycast?");
+				// Log("Finger is NOT GUI");
 				RaycastHit hit;
 				Vector2 coordinate = new Vector2(finger.ScreenPosition.x, finger.ScreenPosition.y);
-				Log("Positino ddddddFinger in screen " + coordinate);
+				// Log("Position Finger in screen " + coordinate);
 				Ray myRay = myCamera.ScreenPointToRay(coordinate);
 
 				if (Physics.Raycast(myRay, out hit, maxDistance, usablesMask.value))
@@ -98,10 +98,15 @@ public class Raycast : MonoBehaviour
 
 					IUsable usable = hit.transform.GetComponent<IUsable>(); ////Double checks to see if the object has the IUsable interface inherited. 
 					IUsable cameraUsable = hit.transform.GetComponent<CameraSwitcher>(); //Checks to see if we need to move the camera 
-
+					InteractableObjects interactableObjects = hit.transform.GetComponent<InteractableObjects>();
+					
 					if (usable != null)
 					{
 						usable.Use();
+						if (interactableObjects != null)
+						{
+							interactableObjects.SendInfoObjectToInventory();
+						}
 					}
 
 					if (cameraUsable != null)

@@ -5,55 +5,147 @@ using UnityEngine;
 using Lean.Touch;
 using UnityEngine.UI;
 
-public class Item_nventoryUI : MonoBehaviour
+public class Item_nventoryUI :SelectableItem
 {
     
-    private bool isSelected;
+    [SerializeField] private Text itemName;
+    [SerializeField] private Image itemImage;
+    [SerializeField] private GameObject gameObjectAttached;
+    private LayerMask layer;
+    private ItemInventoryData itemData;
+    private LeanFinger m_DraggingFinger;
+
+    private Vector3 originalPosition;
+
+    private bool canBeDrag;
     private bool isSavedInventory;
 
-    public bool IsSelected
+    private bool isSelected;
+
+    public bool IsSelect
     {
-        get { return isSelected;}
+        get { return isSelected; }
+        set { isSelected = value; }
     }
 
+    
+    public bool CanBeDrag
+    {
+        get { return canBeDrag;}
+    }
+    
+    
     public bool IsSavedInventory
     {
         get{return isSavedInventory;}
     }
-    public void SelectItemFromInventory(LeanFinger lean)
+
+    public void  SetSelected(bool targetBool)
     {
-        Button buttonItem = gameObject.AddComponent<Button>();
-        // buttonItem.FindSelectableOnDown
-        if (lean.Down)
+        if(PlayerController.current.GetPlayerState(PlayerStates.Interacting))
         {
-            if(lean.IsOverGui)
-            {
-                // if(raycast)
-                // {
-                //     isSelected = true;
-                   
-                // }
-                // else
-                // {
-                //     isSelected = false;
-                //     // Debug.Log()
-                // }
-
-            }
+            IsSelect = targetBool;
+            itemImage.color = itemImage.color = new Color(1, 1, 1, 0.5f);
+            gameObjectAttached.SetActive(true);
+            Debug.Log(IsSelect);
         }
+        else
+        {
+            IsSelect = false;
+        }
+        
+    }
+    public void SetData(ItemInventoryData _itemData)
+    {
+         itemData = _itemData;
+         itemName.text= itemData.nameItem;
+         itemImage.sprite = itemData.itemImage;
+         itemImage.color = new Color(1, 1, 1, 1);
+         isSavedInventory = true;
+    }
 
-         Debug.Log(isSelected);
+    void Awake()
+    {
+        // Use.UpdateRequiredSelectable(gameObject);
+        // originalPosition = transform.localPosition;
+        // layer = gameObject.layer;
+
+        LeanTouch.OnFingerDown += HandleItemSelection;
+        IsSelect = false;
+        gameObjectAttached.SetActive(false);
+        
         
 
-    }
-    void Start()
-    {
-        LeanTouch.OnFingerDown += SelectItemFromInventory;
+        itemImage.color = new Color(0, 0, 0, 0);
+
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // if (Use == null) return;
+        // if (Use.RequiredSelectable == null) return;
+        //
+        // if (Use != null)
+        // {
+        //     if (Use.RequiredSelectable.IsSelected)
+        //     {
+        //         // Debug.Log("true");
+        //         if (m_DraggingFinger != null)
+        //         {
+        //             Debug.Log("true");
+        //         }
+        //         
+        //     }
+        // }
+        
         
     }
+
+    public void HandleItemSelection(LeanFinger finger)
+    {
+
+        // if (finger.IsOverGui)
+        // {
+        //     RaycastHit hit;
+        //     Ray ray = finger.GetRay();
+        //     
+        //     if (Physics.Raycast(ray, out hit))
+        //     {
+        //         Item_nventoryUI item = hit.transform.GetComponent<Item_nventoryUI>();
+        //             Debug.Log(item);
+        //         if (item != null)
+        //         {
+        //             Debug.Log("Is touching item ");
+        //
+        //         }
+        //     }
+        //    
+        // }
+    }
+    
+    
+    public void HandleSelectEvent(LeanFinger finger)
+    {
+        if(!CanBeDrag)return;
+        m_DraggingFinger = finger;
+        OnSelectItem?.Invoke(this, finger);
+        
+    }
+
+    public void HandleDeselectEvent()
+    {
+        m_DraggingFinger = null;
+        OnDeselectItem?.Invoke(this);
+    }
+    
+    public System.Action<Item_nventoryUI, LeanFinger> OnSelectItem;
+    public System.Action<Item_nventoryUI> OnDeselectItem;
+    
+#if UNITY_EDITOR
+    protected virtual void Reset()
+    {
+        Use.UpdateRequiredSelectable(gameObject);
+    }
+#endif
+    
 }

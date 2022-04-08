@@ -6,7 +6,7 @@ public class Lebel : MonoBehaviour
 {
     public GameObject Cristal;
     public Material Bombilla;
-    public int cameraPlaceArray;
+    public int cameraPlaceArray = 1;
 
     public void Start()
     {
@@ -22,13 +22,12 @@ public class Lebel : MonoBehaviour
             Cristal.gameObject.SetActive(false);
 
             // Call Event open door
-            Debug.Log("label?");
+            // Debug.Log("label?");
             PlayerController.current.DeactivateInteracting();
             CameraHandler.current.SelectCamera(cameraPlaceArray);
+            PlayerController.current.SetPlayerInCinematic();
+            
             StartCoroutine(WaitOpenDoor());
-            GameManager.current.openShipDoor();
-            StopAllCoroutines();
-            CameraHandler.current.SwitchToPlayerCamera();
 
         }
         else if (other.tag == "bad")
@@ -43,6 +42,11 @@ public class Lebel : MonoBehaviour
 
     IEnumerator WaitOpenDoor()
     {
-        yield return new WaitForSeconds(7);
+        GameManager.current.openShipDoor();
+        yield return new WaitForSeconds(5);
+        CameraHandler.current.SwitchToPlayerCamera();
+        PlayerController.current.UnSetPlayerCinematic();
+
+
     }
 }

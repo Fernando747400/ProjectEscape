@@ -488,7 +488,7 @@ Transform:
   m_LocalScale: {x: 0.054901354, y: 0.448239, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -0.488, y: 0.136, z: 53.586}
 --- !u!114 &184773128
 MonoBehaviour:
@@ -666,7 +666,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1340092686}
         m_TargetAssemblyTypeName: CameraHandler, Assembly-CSharp
-        m_MethodName: SwitchToMainCamera
+        m_MethodName: SwitchToPlayerCamera
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -824,7 +824,7 @@ Transform:
   - {fileID: 719738590}
   - {fileID: 796476769}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &402013029
 GameObject:
@@ -984,6 +984,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 41076251254039833, guid: 33299a44efa37af4eaec525ae3babf1f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 41076251419836987, guid: 33299a44efa37af4eaec525ae3babf1f,
         type: 3}
       propertyPath: m_Layer
@@ -1139,6 +1144,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1706766129545200939, guid: 33299a44efa37af4eaec525ae3babf1f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1706766129938847457, guid: 33299a44efa37af4eaec525ae3babf1f,
         type: 3}
       propertyPath: m_Layer
@@ -1159,6 +1169,11 @@ PrefabInstance:
       propertyPath: PuzzleColliderBox
       value: 
       objectReference: {fileID: 162726629}
+    - target: {fileID: 1706766130439589536, guid: 33299a44efa37af4eaec525ae3babf1f,
+        type: 3}
+      propertyPath: BombillaUno
+      value: 
+      objectReference: {fileID: 2100000, guid: 286780c5dfcbc974f8af9f63157aac77, type: 2}
     - target: {fileID: 1706766130439589551, guid: 33299a44efa37af4eaec525ae3babf1f,
         type: 3}
       propertyPath: myCamera
@@ -2214,7 +2229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2cfc9752ca3fd34fb57ef6f1af285d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 11.79, y: 2.55, z: 5.72}
+  targetPosition: {x: 11.79, y: 2.55, z: 6}
 --- !u!1 &1150812631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,7 +2596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7aafadb48acad4495802c4b5fad801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 2031891677}
   camerasInScene:
   - {fileID: 1590586420}
   - {fileID: 1897406850}
@@ -2850,7 +2865,7 @@ Transform:
   - {fileID: 759959261}
   - {fileID: 664549833}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1511090275
 GameObject:
@@ -4020,7 +4035,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 21.095, y: 72.932, z: -0.758}
 --- !u!1 &1982967024
 GameObject:

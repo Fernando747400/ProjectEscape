@@ -6,11 +6,13 @@ public class WinTutorial : MonoBehaviour
 {
     public GameObject Cristal;
     public Material Bombilla;
+    public Material BombillaUno;
     public GameObject Palanca;
 
     public void Start()
     {
         Bombilla.color = Color.white;
+        BombillaUno.color = Color.white;
         Cristal.gameObject.SetActive(true);
     }
 

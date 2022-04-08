@@ -183,6 +183,20 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
+    public void SetPlayerInCinematic()
+    {
+        ActivateInteracting();
+        returnButton.gameObject.SetActive(false);
+        inputsUI.gameObject.SetActive(false);
+        
+    }
+
+    public void UnSetPlayerCinematic()
+    {
+        DeactivateInteracting();
+        returnButton.gameObject.SetActive(false);
+        inputsUI.gameObject.SetActive(true);
+    }
     public void ActivateInteracting()
     {
         isInteracting = true;

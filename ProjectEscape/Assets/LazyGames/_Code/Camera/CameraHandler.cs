@@ -24,9 +24,9 @@ public class CameraHandler : MonoBehaviour
         
         Camera.main.gameObject.SetActive(false);
         TurnOff();
+        
         cameraToSwitch.gameObject.SetActive(true);
-        playerController.ActivateInteracting();
-        playerController.HandlePlayerStates();
+        
     }
 
     public void SwitchToPlayerCamera()
@@ -39,7 +39,6 @@ public class CameraHandler : MonoBehaviour
     public void SelectCamera(int placeInArray)
     {
         SwitchCamera(camerasInScene[placeInArray]);
-        
     }
 
     void TurnOff()

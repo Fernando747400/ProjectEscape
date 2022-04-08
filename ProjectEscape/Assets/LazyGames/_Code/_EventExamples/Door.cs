@@ -13,6 +13,7 @@ public class Door : MonoBehaviour
     }
     private void OnEnable()
     {
+        // GameManager.current.OpenShipDoor += Open;
     }
 
     private void OnDisable()

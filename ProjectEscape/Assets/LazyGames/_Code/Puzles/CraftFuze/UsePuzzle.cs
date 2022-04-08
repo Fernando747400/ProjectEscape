@@ -8,7 +8,7 @@ public class UsePuzzle : MonoBehaviour, IUsable
 
     public void Use()
     {
-        GameManager.current.setPlayerState();
+        //GameManager.current.setPlayerState();
         GameManager.current.activateInteracting();
         Debug.Log("Usar");
     }

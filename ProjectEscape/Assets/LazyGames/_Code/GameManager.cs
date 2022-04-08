@@ -38,5 +38,8 @@ public class GameManager : MonoBehaviour
     public event Action TakeObject;
     public void takeObject() => TakeObject?.Invoke();
 
+    public event Action PuzzleCrafteo;
+    public void puzzleCrafteo() => PuzzleCrafteo?.Invoke();
+
 
 }

@@ -12,6 +12,12 @@ public class CarGate : MonoBehaviour
         carGate.SetActive(true);
     }
 
+   
+    void Start()
+    {
+        GameManager.current.PuzzleCrafteo += OpenDoorCrafteoPuzzle;
+    }
+
     void Update()
     {
         Tornillos = GameObject.FindGameObjectsWithTag("tornillo");
@@ -19,14 +25,26 @@ public class CarGate : MonoBehaviour
         if(Tornillos.Length == 0)
         {
             carGate.SetActive(false);
-            StartCoroutine(WaitOpenDoor());
+           
         }
+    }
+
+
+    void OpenDoorCrafteoPuzzle()
+    {
+        StartCoroutine(WaitOpenDoor());
     }
 
     IEnumerator WaitOpenDoor()
     {
         yield return new WaitForSeconds(2);
-        CameraHandler.current.SwitchToPlayerCamera();
-        PlayerController.current.UnSetPlayerCinematic();
+
+        if(PlayerController.current.GetPlayerState(PlayerStates.Interacting))
+        {
+            CameraHandler.current.SwitchToPlayerCamera();
+            PlayerController.current.DeactivateInteracting();
+
+        }
+       // PlayerController.current.UnSetPlayerCinematic();
     }
 }

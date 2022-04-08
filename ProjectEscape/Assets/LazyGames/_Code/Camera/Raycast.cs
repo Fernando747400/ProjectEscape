@@ -43,8 +43,8 @@ public class Raycast : MonoBehaviour
 		catch { myCamera = GetComponent<Camera>(); Log("Didn't find a camera. Tried searching for one on this script parent"); }
 
 		
-		try { mouse = Mouse.current; }
-		catch { LeanTouch.OnFingerDown += GetViewInfoTouch; Log("No mouse found, switched to LeanTouch Instead");}		
+	//	try { mouse = Mouse.current; }
+		//catch { LeanTouch.OnFingerDown += GetViewInfoTouch; Log("No mouse found, switched to LeanTouch Instead");}		
 		
 		
 		LeanTouch.OnFingerDown += GetViewInfoTouch;

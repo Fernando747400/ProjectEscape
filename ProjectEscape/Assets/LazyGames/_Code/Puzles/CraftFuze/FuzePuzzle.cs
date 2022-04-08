@@ -1,10 +1,17 @@
 using System.Collections;
 using UnityEngine;
 
-public class FuzePuzzle : MonoBehaviour
+public class FuzePuzzle : MonoBehaviour, IUsable
 {
     public GameObject PartOne, PartTwo, Fuze3;
     public GameObject[] Parts;
+
+
+    public bool CanInteract
+    {
+        get;
+        set;
+    }
 
     void Start()
     {
@@ -27,7 +34,18 @@ public class FuzePuzzle : MonoBehaviour
     IEnumerator WaitOpenDoor()
     {
         yield return new WaitForSeconds(2);
-        CameraHandler.current.SwitchToPlayerCamera();
-        PlayerController.current.UnSetPlayerCinematic();
+
+        //if(PlayerController.current.GetPlayerState())
+        //CameraHandler.current.SwitchToPlayerCamera();
+        //PlayerController.current.UnSetPlayerCinematic();
+
+
+        Debug.Log("This is payre state" + PlayerController.current.PlayerState);
+    }
+
+
+    public void Use()
+    {
+        GameManager.current.activateInteracting();
     }
 }

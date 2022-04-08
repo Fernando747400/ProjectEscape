@@ -19,7 +19,7 @@ public class Item_nventoryUI :SelectableItem
 
     private bool canBeDrag;
     private bool isSavedInventory;
-
+    
     private bool isSelected;
 
     public bool IsSelect
@@ -39,7 +39,8 @@ public class Item_nventoryUI :SelectableItem
     {
         get{return isSavedInventory;}
     }
-
+    
+    
     public void  SetSelected(bool targetBool)
     {
         if(PlayerController.current.GetPlayerState(PlayerStates.Interacting))
@@ -66,10 +67,7 @@ public class Item_nventoryUI :SelectableItem
 
     void Awake()
     {
-        // Use.UpdateRequiredSelectable(gameObject);
-        // originalPosition = transform.localPosition;
-        // layer = gameObject.layer;
-
+        
         LeanTouch.OnFingerDown += HandleItemSelection;
         IsSelect = false;
         gameObjectAttached.SetActive(false);

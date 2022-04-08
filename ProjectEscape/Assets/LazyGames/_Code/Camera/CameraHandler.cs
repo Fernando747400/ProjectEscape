@@ -9,7 +9,6 @@ public class CameraHandler : MonoBehaviour
     public Camera playerCamera;
 
     public Camera[] camerasInScene;
-    public PlayerController playerController;
 
     private void Awake() {
         current = this;

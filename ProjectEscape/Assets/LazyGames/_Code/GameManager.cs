@@ -16,7 +16,10 @@ public class GameManager : MonoBehaviour
     }
 
     public event Action OpenShipDoor;
-    public void openShipDoor() => OpenShipDoor.Invoke();
+    public void openShipDoor() => OpenShipDoor?.Invoke();
+
+    public event Action OpenSecondDoor;
+    public void openSecondDooor() => OpenSecondDoor?.Invoke();
 
 
     public event Action FinishTutorial;

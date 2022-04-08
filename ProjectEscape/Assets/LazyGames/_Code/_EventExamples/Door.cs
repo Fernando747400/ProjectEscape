@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     private void Start() {
         
         GameManager.current.OpenShipDoor += Open;
+        GameManager.current.OpenSecondDoor += Open;
     }
     private void OnEnable()
     {
@@ -19,6 +20,7 @@ public class Door : MonoBehaviour
     private void OnDisable()
     {
         GameManager.current.OpenShipDoor -= Open;
+        GameManager.current.OpenSecondDoor -= Open;
     }
 
     public void Open()

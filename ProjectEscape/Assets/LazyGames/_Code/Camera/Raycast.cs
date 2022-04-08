@@ -98,6 +98,7 @@ public class Raycast : MonoBehaviour
 
 					IUsable usable = hit.transform.GetComponent<IUsable>(); ////Double checks to see if the object has the IUsable interface inherited. 
 					IUsable cameraUsable = hit.transform.GetComponent<CameraSwitcher>(); //Checks to see if we need to move the camera 
+					Log(usable);
 					InteractableObjects interactableObjects = hit.transform.GetComponent<InteractableObjects>();
 					
 					if (usable != null)

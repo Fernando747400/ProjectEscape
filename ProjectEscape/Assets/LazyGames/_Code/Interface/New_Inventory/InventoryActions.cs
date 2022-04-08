@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class InventoryActions : MonoBehaviour
 {
-
-
-    Item_nventoryUI[] itemsUI;
+    public  Item_nventoryUI[] itemsUI;
     
     public void EreaseItemsData()
     {
         for (int i = 0; i < itemsUI.Length; i++)
         {
-            itemsUI[i].
+            itemsUI[i].itemImage = null;
+            itemsUI[i].itemImage = null;
+            itemsUI[i].gameObjectAttached = null;
         }
     }
     // Start is called before the first frame update

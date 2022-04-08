@@ -8,9 +8,13 @@ using UnityEngine.UI;
 public class Item_nventoryUI :SelectableItem
 {
     
-    [SerializeField] private Text itemName;
-    [SerializeField] private Image itemImage;
-    [SerializeField] private GameObject gameObjectAttached;
+    [SerializeField] public  Text itemName;
+    [SerializeField] public Image itemImage;
+    [SerializeField] public GameObject gameObjectAttached;
+
+    
+
+
     private LayerMask layer;
     private ItemInventoryData itemData;
     private LeanFinger m_DraggingFinger;

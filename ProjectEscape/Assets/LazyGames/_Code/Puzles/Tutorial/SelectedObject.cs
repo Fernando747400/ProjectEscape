@@ -17,6 +17,7 @@ public class SelectedObject : MonoBehaviour
         LeanTouch.OnFingerDown += GetViewInfoTouch;
         LeanTouch.OnFingerUp += TurnOffLeans;
        
+        
 
         for (int i = 0; i < myLeanDrags.Length; i++)
         {

@@ -11,6 +11,9 @@ TagManager:
   - Lever
   - Slot
   - Item
+  - desatornillador
+  - tornillo
+  - parts
   layers:
   - Default
   - TransparentFX

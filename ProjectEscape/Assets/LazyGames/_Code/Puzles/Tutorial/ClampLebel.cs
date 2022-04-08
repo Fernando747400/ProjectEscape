@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Lean.Touch;
 using Lean.Common;
@@ -8,8 +6,6 @@ public class ClampLebel : MonoBehaviour
 {
     float pitch;
     public float xvalue;
-
-    public Vector3 myLRotation;
     public GameObject Palanca;
     private LeanTwistRotateAxis LeanR;
     public int maxRotate, minRotate;

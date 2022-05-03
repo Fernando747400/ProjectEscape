@@ -9,6 +9,7 @@ public class ItemInventoryData : ScriptableObject
     //Data Item
     [SerializeField] public Sprite itemImage;
     [SerializeField] public string nameItem;
+    [SerializeField] public string namePuzzle;
     
     
     public string MyPoolKey = "item";

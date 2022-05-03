@@ -16,8 +16,8 @@ public abstract class InventroyDraggableItem : MonoBehaviour
 
     private void Start()
     {
-        DraggableItem.OnSelectItem += HandleOnSelectDraggableItem;
-        DraggableItem.OnDeselectItem += HandleOnDeselectDraggableItem;
+        // DraggableItem.OnSelectItem += HandleOnSelectDraggableItem;
+        // DraggableItem.OnDeselectItem += HandleOnDeselectDraggableItem;
     }
     
     protected abstract void HandleOnSelectDraggableItem(Item_nventoryUI item, LeanFinger finger);

@@ -72,82 +72,63 @@ public class Item_nventoryUI :SelectableItem
     void Awake()
     {
         
-        LeanTouch.OnFingerDown += HandleItemSelection;
         IsSelect = false;
         gameObjectAttached.SetActive(false);
         
-        
-
         itemImage.color = new Color(0, 0, 0, 0);
 
     }
 
     void Update()
     {
-        // if (Use == null) return;
-        // if (Use.RequiredSelectable == null) return;
-        //
-        // if (Use != null)
-        // {
-        //     if (Use.RequiredSelectable.IsSelected)
-        //     {
-        //         // Debug.Log("true");
-        //         if (m_DraggingFinger != null)
-        //         {
-        //             Debug.Log("true");
-        //         }
-        //         
-        //     }
-        // }
-        
-        
+
     }
 
-    public void HandleItemSelection(LeanFinger finger)
-    {
+    // public void HandleItemSelection(LeanFinger finger)
+    // {
+    //
+    //     // if (finger.IsOverGui)
+    //     // {
+    //     //     RaycastHit hit;
+    //     //     Ray ray = finger.GetRay();
+    //     //     
+    //     //     if (Physics.Raycast(ray, out hit))
+    //     //     {
+    //     //         Item_nventoryUI item = hit.transform.GetComponent<Item_nventoryUI>();
+    //     //             Debug.Log(item);
+    //     //         if (item != null)
+    //     //         {
+    //     //             Debug.Log("Is touching item ");
+    //     //
+    //     //         }
+    //     //     }
+    //     //    
+    //     // }
+    // }
+    //
+    
+    // public void HandleSelectEvent(LeanFinger finger)
+    // {
+    //     if(!CanBeDrag)return;
+    //     m_DraggingFinger = finger;
+    //     OnSelectItem?.Invoke(this, finger);
+    //     
+    // }
 
-        // if (finger.IsOverGui)
-        // {
-        //     RaycastHit hit;
-        //     Ray ray = finger.GetRay();
-        //     
-        //     if (Physics.Raycast(ray, out hit))
-        //     {
-        //         Item_nventoryUI item = hit.transform.GetComponent<Item_nventoryUI>();
-        //             Debug.Log(item);
-        //         if (item != null)
-        //         {
-        //             Debug.Log("Is touching item ");
-        //
-        //         }
-        //     }
-        //    
-        // }
-    }
+    // public void HandleDeselectEvent()
+    // {
+    //     m_DraggingFinger = null;
+    //     OnDeselectItem?.Invoke(this);
+    // }
     
+    // public System.Action<Item_nventoryUI, LeanFinger> OnSelectItem;
+    // public System.Action<Item_nventoryUI> OnDeselectItem;
     
-    public void HandleSelectEvent(LeanFinger finger)
-    {
-        if(!CanBeDrag)return;
-        m_DraggingFinger = finger;
-        OnSelectItem?.Invoke(this, finger);
-        
-    }
-
-    public void HandleDeselectEvent()
-    {
-        m_DraggingFinger = null;
-        OnDeselectItem?.Invoke(this);
-    }
-    
-    public System.Action<Item_nventoryUI, LeanFinger> OnSelectItem;
-    public System.Action<Item_nventoryUI> OnDeselectItem;
-    
-#if UNITY_EDITOR
-    protected virtual void Reset()
-    {
-        Use.UpdateRequiredSelectable(gameObject);
-    }
-#endif
-    
+// #if UNITY_EDITOR
+//     protected virtual void Reset()
+//     {
+//         Use.UpdateRequiredSelectable(gameObject);
+//     }
+// #endif
+//     
 }

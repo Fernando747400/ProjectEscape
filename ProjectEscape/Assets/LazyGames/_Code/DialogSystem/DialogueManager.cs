@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,10 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager current;
+    
+    public GameObject dialogueSystemGO;
+    public bool textIsPlaying;
     public TextMeshProUGUI nameCharacter;
     public TextMeshProUGUI dialoguueText;
     private Queue<string> sentences;
@@ -12,13 +17,28 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+        GameManager.current.TurnOnDialogueSystem += HandleDialogueState;
+        
         sentences = new Queue<string>();
         Boxtext.SetActive(false);
+
+    }
+    
+
+    void HandleDialogueState()
+    {
+        if (!dialogueSystemGO.activeSelf)
+        {
+            dialogueSystemGO.SetActive(true);
+        }
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
+        HandleDialogueState();
+        textIsPlaying = true;
         Boxtext.SetActive(true);
+
         Debug.Log("Starting conversation with: " + dialogue.character);
 
         nameCharacter.text = dialogue.character;
@@ -38,6 +58,7 @@ public class DialogueManager : MonoBehaviour
         if(sentences.Count == 0)
         {
             EndDialogue();
+            
             return;
         }
 
@@ -48,17 +69,26 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentences(string sentence)
     {
+        
         dialoguueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             dialoguueText.text += letter;
             yield return null;
         }
-
+        
     }
 
     void EndDialogue()
     {
         Boxtext.SetActive(false);
+        textIsPlaying = false;
+       dialogueSystemGO.SetActive(false);
+
+    }
+
+    private void OnDisable()
+    {
+        GameManager.current.TurnOnDialogueSystem -= HandleDialogueState;
     }
 }

@@ -7,12 +7,14 @@ using System;
 public class GameManager : MonoBehaviour
 {
     public static GameManager current;
+    public DialogueManager DialogueManager;
 
     public void Awake()
     {
         current = this;
         DontDestroyOnLoad(this.gameObject);
         Application.targetFrameRate = 30;
+        DialogueManager.gameObject.transform.parent.gameObject.SetActive(false);
     }
 
     public event Action OpenShipDoor;
@@ -40,6 +42,11 @@ public class GameManager : MonoBehaviour
 
     public event Action PuzzleCrafteo;
     public void puzzleCrafteo() => PuzzleCrafteo?.Invoke();
+
+    public event Action TurnOnDialogueSystem;
+    public void turnOnDialogueSystem() => TurnOnDialogueSystem?.Invoke();
+    
+    
 
 
 }

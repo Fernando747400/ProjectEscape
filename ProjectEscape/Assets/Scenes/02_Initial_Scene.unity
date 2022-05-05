@@ -1533,6 +1533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4faf8a767b817bb4eb2686ba31e4e3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueSystemG0: {fileID: 1035556650}
   IntroDialogue: {fileID: 1749464753}
 --- !u!1 &678346034
 GameObject:
@@ -3926,10 +3927,20 @@ PrefabInstance:
       propertyPath: dialogue.sentences.Array.data[1]
       value: Where do I left my card?
       objectReference: {fileID: 0}
+    - target: {fileID: 6562760537651262463, guid: b751ad0bcbf85a54d9c1fa71b2e5ca13,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6562760538954514411, guid: b751ad0bcbf85a54d9c1fa71b2e5ca13,
         type: 3}
       propertyPath: m_text
       value: Intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562760538954514411, guid: b751ad0bcbf85a54d9c1fa71b2e5ca13,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6562760538966600635, guid: b751ad0bcbf85a54d9c1fa71b2e5ca13,
         type: 3}
@@ -3974,7 +3985,7 @@ PrefabInstance:
     - target: {fileID: 6562760539095594195, guid: b751ad0bcbf85a54d9c1fa71b2e5ca13,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6562760539095594199, guid: b751ad0bcbf85a54d9c1fa71b2e5ca13,
         type: 3}

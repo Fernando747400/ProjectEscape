@@ -7,6 +7,8 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager current;
+    public GameObject inputCanvas;
+    public GameObject buttonContinue;
     
     public GameObject dialogueSystemGO;
     public bool textIsPlaying;
@@ -17,10 +19,11 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        GameManager.current.TurnOnDialogueSystem += HandleDialogueState;
+       // GameManager.current.TurnOnDialogueSystem += HandleDialogueState;
         
         sentences = new Queue<string>();
         Boxtext.SetActive(false);
+        buttonContinue.SetActive(false);
 
     }
     
@@ -35,9 +38,13 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        HandleDialogueState();
+       // HandleDialogueState();
         textIsPlaying = true;
+        inputCanvas.SetActive(false);
         Boxtext.SetActive(true);
+        buttonContinue.SetActive(true);
+
+
 
         Debug.Log("Starting conversation with: " + dialogue.character);
 
@@ -82,13 +89,15 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Boxtext.SetActive(false);
+        buttonContinue.SetActive(false);
         textIsPlaying = false;
-       dialogueSystemGO.SetActive(false);
+        inputCanvas.gameObject.SetActive(true);
+       // dialogueSystemGO.SetActive(false);
 
     }
 
     private void OnDisable()
     {
-        GameManager.current.TurnOnDialogueSystem -= HandleDialogueState;
+        //GameManager.current.TurnOnDialogueSystem -= HandleDialogueState;
     }
 }

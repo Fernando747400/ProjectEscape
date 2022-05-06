@@ -6,12 +6,12 @@ using UnityEngine;
 public class FirstDialogue : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueSystemG0;
-    [SerializeField]private DialogueTrigger IntroDialogue;
+    [SerializeField] private DialogueTrigger IntroDialogue;
     IEnumerator ShowFirstDialogue()
     {
         yield return new WaitForSeconds(3f);
         dialogueSystemG0.SetActive(true);
-        IntroDialogue.TriggerDialogue();
+       IntroDialogue.TriggerDialogue();
         
     }
     // Start is called before the first frame update

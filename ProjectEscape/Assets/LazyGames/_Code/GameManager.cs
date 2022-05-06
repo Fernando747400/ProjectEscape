@@ -8,13 +8,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager current;
     public DialogueManager DialogueManager;
+    public GameObject InputCanvas;
 
     public void Awake()
     {
         current = this;
         DontDestroyOnLoad(this.gameObject);
         Application.targetFrameRate = 30;
-        DialogueManager.gameObject.transform.parent.gameObject.SetActive(false);
+        //DialogueManager.gameObject.transform.parent.gameObject.SetActive(false);
     }
 
     public event Action OpenShipDoor;

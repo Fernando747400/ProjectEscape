@@ -158,8 +158,7 @@ public class PlayerController : MonoBehaviour
             
             returnButton.SetActive(true);
             inputsUI.gameObject.SetActive(false);
-            Debug.Log("Esta interactuando");
-
+            
         }
         else
         {
@@ -167,7 +166,6 @@ public class PlayerController : MonoBehaviour
             
             returnButton.SetActive(false);
             inputsUI.gameObject.SetActive(true);
-            Debug.Log("Dejo de interactuar");
         }
     }
 

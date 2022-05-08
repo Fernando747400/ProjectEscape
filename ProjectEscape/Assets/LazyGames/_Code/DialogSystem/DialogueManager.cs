@@ -91,7 +91,10 @@ public class DialogueManager : MonoBehaviour
         Boxtext.SetActive(false);
         buttonContinue.SetActive(false);
         textIsPlaying = false;
-        inputCanvas.gameObject.SetActive(true);
+        if(PlayerController.current.GetPlayerState(PlayerStates.NoInteracting))
+        {
+            inputCanvas.gameObject.SetActive(true);
+        }
        // dialogueSystemGO.SetActive(false);
 
     }

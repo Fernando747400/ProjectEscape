@@ -10,7 +10,7 @@ public class Teleport : MonoBehaviour
     [SerializeField] private string sceneToLoad;
     public void LoadScene()
     {
-        SceneManager.LoadSceneAsync(sceneToLoad);
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     private void OnTriggerEnter(Collider other)

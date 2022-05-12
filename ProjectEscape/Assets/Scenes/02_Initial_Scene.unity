@@ -2535,7 +2535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473936015}
   m_LocalRotation: {x: -0.49999985, y: -0.5000001, z: -0.50000024, w: 0.49999985}
-  m_LocalPosition: {x: 11.849998, y: 2.5099998, z: -6.35}
+  m_LocalPosition: {x: 12.063, y: 2.5099998, z: -6.35}
   m_LocalScale: {x: 7.212553, y: 0.33, z: 5}
   m_Children: []
   m_Father: {fileID: 1746887911}
@@ -2978,7 +2978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648658677}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -12.37, y: 2.54, z: 0.22999954}
+  m_LocalPosition: {x: -12.37, y: 2.395, z: 0.22999954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 303045561}
@@ -2992,9 +2992,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648658677}
-  m_Text: 'Control de
+  m_Text: 'Door Control
 
-    Escotilla'
+'
   m_OffsetZ: 0
   m_CharacterSize: 0.14
   m_LineSpacing: 0.78
@@ -3737,8 +3737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aca50f1ea3eb1249bce3e6d696989b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogueManager: {fileID: 2518699002587917019}
-  InputCanvas: {fileID: 0}
 --- !u!4 &2007453082
 Transform:
   m_ObjectHideFlags: 0
@@ -3867,19 +3865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eee90ec15ee8224cb58fe976d02d9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 03_Puzzle
---- !u!114 &2518699002587917019 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6192632314422808278, guid: 8e0b5cebb0976144aa0438efff5372d4,
-    type: 3}
-  m_PrefabInstance: {fileID: 8576139167189492749}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e132c6e657737e449b3cd47f43853a59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  sceneToLoad: 03_hangar
 --- !u!224 &6562760537202663479 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3177019960690885690, guid: 8e0b5cebb0976144aa0438efff5372d4,

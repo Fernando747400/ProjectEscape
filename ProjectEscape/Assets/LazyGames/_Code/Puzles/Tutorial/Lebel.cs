@@ -22,7 +22,6 @@ public class Lebel : MonoBehaviour
             Cristal.gameObject.SetActive(false);
 
             // Call Event open door
-            // Debug.Log("label?");
             PlayerController.current.DeactivateInteracting();
             CameraHandler.current.SelectCamera(cameraPlaceArray);
             PlayerController.current.SetPlayerInCinematic();

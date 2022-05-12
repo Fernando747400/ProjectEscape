@@ -5,6 +5,7 @@ public class FuzePuzzle : MonoBehaviour, IUsable
 {
     public GameObject PartOne, PartTwo, Fuze3;
     public GameObject[] Parts;
+    public GameObject placeFuze;
 
 
     public bool CanInteract
@@ -17,7 +18,7 @@ public class FuzePuzzle : MonoBehaviour, IUsable
     {
         PartOne.SetActive(false);
         PartTwo.SetActive(false);
-        Fuze3.SetActive(false);
+        // Fuze3.SetActive(false);
     }
 
     void Update()
@@ -26,22 +27,11 @@ public class FuzePuzzle : MonoBehaviour, IUsable
 
         if (Parts.Length == 2)
         {
-            Fuze3.SetActive(true);
-            StartCoroutine(WaitOpenDoor());
+            Fuze3.transform.position = placeFuze.transform.position;
         }
     }
 
-    IEnumerator WaitOpenDoor()
-    {
-        yield return new WaitForSeconds(2);
-
-        //if(PlayerController.current.GetPlayerState())
-        //CameraHandler.current.SwitchToPlayerCamera();
-        //PlayerController.current.UnSetPlayerCinematic();
-
-
-        Debug.Log("This is payre state" + PlayerController.current.PlayerState);
-    }
+    
 
 
     public void Use()

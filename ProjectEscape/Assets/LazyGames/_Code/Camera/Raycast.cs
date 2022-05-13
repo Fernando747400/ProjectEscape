@@ -90,6 +90,7 @@ public class Raycast : MonoBehaviour
 				RaycastHit hit;
 				Vector2 coordinate = new Vector2(finger.ScreenPosition.x, finger.ScreenPosition.y);
 				// Log("Position Finger in screen " + coordinate);
+				if (myCamera == null) myCamera = Camera.main;
 				Ray myRay = myCamera.ScreenPointToRay(coordinate);
 
 				if (Physics.Raycast(myRay, out hit, maxDistance, usablesMask.value))

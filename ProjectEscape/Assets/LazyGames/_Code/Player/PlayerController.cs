@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         current = this;
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
         Application.targetFrameRate = 30;
         SetPlayer();   
     }

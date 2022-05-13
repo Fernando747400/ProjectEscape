@@ -69,5 +69,4 @@ public class SelectedObject : MonoBehaviour
 
     }
 
-    
 }

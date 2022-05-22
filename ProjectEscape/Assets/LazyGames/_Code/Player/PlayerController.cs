@@ -179,8 +179,6 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
-
-        return false;
     }
 
     public void SetPlayerInCinematic()

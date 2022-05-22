@@ -24,20 +24,24 @@ EditorUserSettings:
       value: 22424703114646680e0b0227036c0f41292408262d3b2e0f1e2a0f36e7ee7a2decee22f0
       flags: 0
     RecentlyUsedScenePath-6:
-      value: 22424703114646680e0b0227036c0f42293e16233821273c121a1e36ece57a2decee22f0
+      value: 22424703114646680e0b0227036c0f44293b1928623d28393930
       flags: 0
     RecentlyUsedScenePath-7:
-      value: 22424703114646680e0b0227036c0f42293e16233821273c121a1e36ece57a2decee22f0
-      flags: 0
-    RecentlyUsedScenePath-8:
       value: 22424703114646680e0b0227036c0f43291f19242b29347e38271427fb
       flags: 0
+    RecentlyUsedScenePath-8:
+      value: 22424703114646680e0b0227036c0f42293e16233821273c121a1e36ece57a2decee22f0
+      flags: 0
     RecentlyUsedScenePath-9:
+<<<<<<< Master
 <<<<<<< Master
       value: 22424703114646680e0b0227036c0f4056270a3f292a2770292c5d3ee3f0352bacf238e0f323
 =======
       value: 22424703114646680e0b0227036c0f44293b1928623d28393930
 >>>>>>> Auto stash before revert of "Merge remote-tracking branch 'origin/Master' into Master"
+=======
+      value: 22424703114646680e0b0227036c0f43291f19242b29347e38271427fb
+>>>>>>> Asset Pack/ AudioManager
       flags: 0
     UnityRemoteDevice:
       value: 225f4d46245b0d4902070862342649191512

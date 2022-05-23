@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3414,7 +3414,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ba1a93fd61f0349a9ef63bb0828c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  mixerGroup: {fileID: 0}
+  sounds:
+  - name: Card_Slide
+    clip: {fileID: 8300000, guid: 70ec730e5ecfa3945925aff737638d92, type: 3}
+    volume: 0.5
+    volumeVariance: 0.5
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
 --- !u!4 &649596998
 Transform:
   m_ObjectHideFlags: 0

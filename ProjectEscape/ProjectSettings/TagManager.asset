@@ -15,6 +15,9 @@ TagManager:
   - tornillo
   - parts
   - Fuzes
+  - World
+  - Props
+  - Room
   layers:
   - Default
   - TransparentFX

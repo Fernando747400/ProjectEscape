@@ -26,5 +26,6 @@ public class Door : MonoBehaviour
     public void Open()
     {
         iTween.MoveTo(this.gameObject, iTween.Hash("position",targetPosition, "time",5));
+        FindObjectOfType<AudioManager>().Play("Door_Open");
     }
 }

@@ -55,12 +55,13 @@ public class PlayerController : MonoBehaviour
         //DontDestroyOnLoad(this.gameObject);
         Application.targetFrameRate = 30;
         SetPlayer();   
+        StartCoroutine(corAudioCooldown());
     }
     private void FixedUpdate()
     {
         MovementPlayer();
         MovementCamera();
-        
+        corAudioCooldown();
         
     }
 
@@ -179,8 +180,6 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
-
-        return false;
     }
 
     public void SetPlayerInCinematic()
@@ -217,6 +216,24 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         GameManager.current.SetPlayerState -= HandlePlayerStates;
+    }
+
+    //cryoStorage -23/05/22
+    //calls audio manager method play when player is moving
+    IEnumerator corAudioCooldown()
+    {
+        while (true)
+        {
+            CallAudio();
+            yield return new WaitForSeconds(.5f);
+        }
+    }
+     void CallAudio()
+    {
+        if(myCharacterController.velocity.magnitude > 0)
+        {
+            FindObjectOfType<AudioManager>().Play("Player_Step");
+        }
     }
 }
 

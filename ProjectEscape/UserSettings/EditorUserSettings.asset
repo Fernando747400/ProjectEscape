@@ -24,15 +24,23 @@ EditorUserSettings:
       value: 22424703114646680e0b0227036c6f050c0d142f3f67766212190829f8ec3176f7e93ffdfe
       flags: 0
     RecentlyUsedScenePath-6:
+<<<<<<< HEAD
       value: 22424703114646680e0b0227036c6f050c0d142f3f67766312190829f8ec3176f7e93ffdfe
       flags: 0
     RecentlyUsedScenePath-7:
       value: 22424703114646680e0b0227036c6f050c0d142f3f67766412190829f8ec3176f7e93ffdfe
+=======
+      value: 22424703114646680e0b0227036c0f44293b1928623d28393930
+      flags: 0
+    RecentlyUsedScenePath-7:
+      value: 22424703114646680e0b0227036c0f43291f19242b29347e38271427fb
+>>>>>>> NewMasterBranch
       flags: 0
     RecentlyUsedScenePath-8:
       value: 22424703114646680e0b0227036c6f050c0d142f3f67766512190829f8ec3176f7e93ffdfe
       flags: 0
     RecentlyUsedScenePath-9:
+<<<<<<< HEAD
       value: 22424703114646680e0b0227036c6f050c0d142f3f67766612190829f8ec3176f7e93ffdfe
       flags: 0
     UnityEditor.ShaderGraph.Blackboard:
@@ -43,6 +51,9 @@ EditorUserSettings:
       flags: 0
     UnityEditor.ShaderGraph.InspectorWindow:
       value: 18135939215a0a5004000b0e15254b524c1119263f2d6a722016393ce1eb3d36e5d339f9a5602b2e2c07a37e0901373ae01e0008f707250d171df81a53a541415f95548717f73713d91006c1c309d0effad0d2f9ddffa5828f91f0beb6fdd1cbfceba0b9f0b3bed8e8f5ade1ff8c978883d3f59e9e919c89eacfcc
+=======
+      value: 22424703114646680e0b0227036c0f42293e16233821273c121a1e36ece57a2decee22f0
+>>>>>>> NewMasterBranch
       flags: 0
     UnityRemoteDevice:
       value: 225f4d46245b0d4902070862342649191512

@@ -73,10 +73,28 @@ public class PlayerController : MonoBehaviour
 #endif
         mainCamera = Camera.main;
         myCharacterController = gameObject.GetComponent<CharacterController>();
+
+        returnButton = GameObject.Find("ReturnButton");
+        inputsUI = GameObject.Find("InputUI");
+
+        if (GameManager.current != null)
+        {
+            Debug.Log("<color=#FFC733> EXISTE GameManager en Scene? </color>" + GameManager.current);
+
+            GameManager.current.SetPlayerState += HandlePlayerStates;
+            GameManager.current.ActivateInteracting += ActivateInteracting;
+
+
+
+        }
+
+
         HandlePlayerStates();
         
-        GameManager.current.SetPlayerState += HandlePlayerStates;
-        GameManager.current.ActivateInteracting += ActivateInteracting;
+        
+
+
+       
     }
 
     public void ReceiveInputsPlayer(Vector2 _vectorMove, Vector2 _vectorCam, Vector2 _vectorkeyboard)
@@ -156,10 +174,20 @@ public class PlayerController : MonoBehaviour
         if (isInteracting)
         {
             PlayerState = PlayerStates.Interacting;
-            
-            returnButton.SetActive(true);
-            inputsUI.gameObject.SetActive(false);
-            
+           
+
+            if(returnButton != null)
+            {
+                returnButton.SetActive(true);
+
+            }
+
+            if(returnButton != null)
+            {
+                inputsUI.gameObject.SetActive(false);
+            }
+
+
         }
         else
         {
@@ -215,6 +243,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
+        if(GameManager.current!=null)
         GameManager.current.SetPlayerState -= HandlePlayerStates;
     }
 

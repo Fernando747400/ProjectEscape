@@ -11,6 +11,7 @@ public class InteractableObjects : MonoBehaviour
 
     void Start()
     {
+        if(GameManager.current != null)
         GameManager.current.takeObject();
         // isInInventory = InventoryUI_Dino.current.itemList.Find(itemTarget.IsSavedInventory);
     }

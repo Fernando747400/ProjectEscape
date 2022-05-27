@@ -11076,6 +11076,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8900623572793948302, guid: f2ddf392a33aa2040a35478b42bb2331,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8900623572887777667, guid: f2ddf392a33aa2040a35478b42bb2331,
         type: 3}
       propertyPath: m_Name
@@ -11166,6 +11171,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8900623572906390615, guid: f2ddf392a33aa2040a35478b42bb2331,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8900623572930727739, guid: f2ddf392a33aa2040a35478b42bb2331,
         type: 3}
       propertyPath: m_Layer
@@ -11210,6 +11220,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900623573021064401, guid: f2ddf392a33aa2040a35478b42bb2331,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 16.596142
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900623573021064401, guid: f2ddf392a33aa2040a35478b42bb2331,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.7447314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900623573021064401, guid: f2ddf392a33aa2040a35478b42bb2331,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 4.8693376
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900623573021064401, guid: f2ddf392a33aa2040a35478b42bb2331,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -2.2645206
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900623573021064401, guid: f2ddf392a33aa2040a35478b42bb2331,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.031833827
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900623573021064401, guid: f2ddf392a33aa2040a35478b42bb2331,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.112633705
       objectReference: {fileID: 0}
     - target: {fileID: 8900623573021064402, guid: f2ddf392a33aa2040a35478b42bb2331,
         type: 3}

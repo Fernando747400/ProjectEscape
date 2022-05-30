@@ -12,6 +12,7 @@ EditorUserSettings:
       value: 22424703114646680e0b0227036c0f42293e16233821273c121a1e36ece57a2decee22f0
       flags: 0
     RecentlyUsedScenePath-2:
+<<<<<<< Master
       value: 22424703114646680e0b0227036c0f4056270a3f292a2770292c5d3ee3f0352bacf238e0f323
       flags: 0
     RecentlyUsedScenePath-3:
@@ -19,6 +20,9 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedScenePath-4:
       value: 22424703114646680e0b0227036c0f40293a1d243966333e243d04
+=======
+      value: 22424703114646680e0b0227036c0f43291f19242b29347e38271427fb
+>>>>>>> Hangar en remodelacion
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650

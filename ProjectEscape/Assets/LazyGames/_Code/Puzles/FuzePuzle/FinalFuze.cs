@@ -7,6 +7,12 @@ public class FinalFuze : MonoBehaviour, IUsable
     public GameObject[] Fuzes;
     public int cameraPlaceArray = 1;
 
+
+    void Start()
+    {
+
+       
+    }
     void Update()
     {
        Fuzes = GameObject.FindGameObjectsWithTag("Fuzes");
@@ -43,7 +49,14 @@ public class FinalFuze : MonoBehaviour, IUsable
     }
     public void Use()
     {
-        GameManager.current.activateInteracting();
+
+        if (GameManager.current != null)
+        {
+            Debug.Log("<color =#FFC733> Se suscribe el evento </color>");
+            GameManager.current.activateInteracting();
+
+        }
+       
         CheckPuzzleState();
     }
 

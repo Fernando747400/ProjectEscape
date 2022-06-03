@@ -21,6 +21,7 @@ public class SelectedObject : MonoBehaviour
 
         for (int i = 0; i < myLeanDrags.Length; i++)
         {
+            Debug.Assert("<color=#FFC733> Existen lean drags </color>" +  myLeanDrags != null + this.name);
             myLeanDrags[i].enabled = false;
         }
     }

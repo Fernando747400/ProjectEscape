@@ -17,37 +17,34 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public GameObject Boxtext;
 
+    public GameObject currentImage;
+
     void Start()
     {
-       // GameManager.current.TurnOnDialogueSystem += HandleDialogueState;
         
         sentences = new Queue<string>();
         Boxtext.SetActive(false);
         buttonContinue.SetActive(false);
+        
 
     }
     
-
-    void HandleDialogueState()
-    {
-        if (!dialogueSystemGO.activeSelf)
-        {
-            dialogueSystemGO.SetActive(true);
-        }
-    }
-
+   
     public void StartDialogue(Dialogue dialogue)
     {
-       // HandleDialogueState();
         textIsPlaying = true;
-        inputCanvas.SetActive(false);
+       
+        currentImage = dialogue.image.gameObject;
+        currentImage.SetActive(true);
+        
+        if (inputCanvas != null)
+        {
+            inputCanvas.SetActive(false);
+        }
         Boxtext.SetActive(true);
         buttonContinue.SetActive(true);
 
-
-
-        Debug.Log("Starting conversation with: " + dialogue.character);
-
+        
         nameCharacter.text = dialogue.character;
 
         sentences.Clear();
@@ -62,6 +59,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        Debug.Log("Display next sentence");
         if(sentences.Count == 0)
         {
             EndDialogue();
@@ -76,7 +74,6 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentences(string sentence)
     {
-        
         dialoguueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
@@ -91,12 +88,18 @@ public class DialogueManager : MonoBehaviour
         Boxtext.SetActive(false);
         buttonContinue.SetActive(false);
         textIsPlaying = false;
-        if(PlayerController.current.GetPlayerState(PlayerStates.NoInteracting))
+        
+        currentImage.SetActive(false);
+        currentImage = null;
+        
+        if (PlayerController.current != null)
         {
-            inputCanvas.gameObject.SetActive(true);
+            if(PlayerController.current.GetPlayerState(PlayerStates.NoInteracting))
+            {
+                inputCanvas.gameObject.SetActive(true);
+            }
         }
-       // dialogueSystemGO.SetActive(false);
-
+        
     }
 
     private void OnDisable()
@@ -104,3 +107,4 @@ public class DialogueManager : MonoBehaviour
         //GameManager.current.TurnOnDialogueSystem -= HandleDialogueState;
     }
 }
+

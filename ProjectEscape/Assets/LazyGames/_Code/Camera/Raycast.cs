@@ -50,7 +50,7 @@ public class Raycast : MonoBehaviour
 		LeanTouch.OnFingerDown += GetViewInfoTouch;
 	}
     
-	void GetViewInfo()
+	/*void GetViewInfo()
 	{
 		if(playerController.PlayerState == PlayerStates.NoInteracting)
         {
@@ -78,6 +78,7 @@ public class Raycast : MonoBehaviour
 			}
         }
 	}
+	*/
 
 	void GetViewInfoTouch(LeanFinger finger)
 	{
@@ -104,6 +105,8 @@ public class Raycast : MonoBehaviour
 					
 					if (usable != null)
 					{
+						Log("Call USABLE  " + usable.ToString());
+
 						usable.Use();
 						if (interactableObjects != null)
 						{

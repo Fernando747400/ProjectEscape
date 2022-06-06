@@ -19,7 +19,7 @@ public class OtherconcionalTutorial: MonoBehaviour
             Cristal.gameObject.SetActive(false);
 
             // Call Event open door
-            FindObjectOfType<AudioManager>().Play("Card_Slide");
+            //FindObjectOfType<AudioManager>().Play("Card_Slide");
 
             // GameManager.current.openShipDoor();
         }

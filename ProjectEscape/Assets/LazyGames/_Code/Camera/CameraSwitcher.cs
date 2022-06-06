@@ -12,6 +12,8 @@ public class CameraSwitcher : MonoBehaviour, IUsable
     public void Use()
     {
         cameraHandler.SelectCamera(cameraToSwitch);
-        
+      
+
+
     }
 }

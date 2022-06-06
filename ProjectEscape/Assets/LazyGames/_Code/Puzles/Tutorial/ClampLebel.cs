@@ -17,12 +17,12 @@ public class ClampLebel : MonoBehaviour
 
     void Update()
     {
-        
-        if(xvalue == maxRotate)
+        //xvalue = this.transform.rotation.eulerAngles.x;
+        if(xvalue == 90)
         {
-            xvalue += Palanca.transform.localEulerAngles.x;
+            xvalue = Palanca.transform.localEulerAngles.x;
         }
-        if(xvalue != 0)
+        if(xvalue != 90)
         {
             xvalue = minRotate;
             LeanR.enabled = false;

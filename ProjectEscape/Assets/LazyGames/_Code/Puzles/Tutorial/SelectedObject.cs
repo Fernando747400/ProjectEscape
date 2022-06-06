@@ -17,13 +17,12 @@ public class SelectedObject : MonoBehaviour
         LeanTouch.OnFingerDown += GetViewInfoTouch;
         LeanTouch.OnFingerUp += TurnOffLeans;
        
-        
-
         for (int i = 0; i < myLeanDrags.Length; i++)
         {
             Debug.Assert("<color=#FFC733> Existen lean drags </color>" +  myLeanDrags != null + this.name);
             myLeanDrags[i].enabled = false;
         }
+
     }
 
     private void Update()
@@ -36,6 +35,7 @@ public class SelectedObject : MonoBehaviour
         {
             PuzzleColliderBox.enabled = true;
         }
+
     }
 
     void TurnOffLeans(LeanFinger finger)
@@ -50,11 +50,12 @@ public class SelectedObject : MonoBehaviour
        
     }
     
+
     void GetViewInfoTouch(LeanFinger finger)
     {
         RaycastHit hit;
         Vector2 coordinate = new Vector2(finger.ScreenPosition.x, finger.ScreenPosition.y);
-        // Debug.Log(coordinate);
+        //Debug.Log(coordinate);
         Ray myRay = myCamera.ScreenPointToRay(coordinate);
         if (Physics.Raycast(myRay, out hit, 25f))
         {
@@ -67,7 +68,7 @@ public class SelectedObject : MonoBehaviour
                 }   
             }
         }
-
+       
     }
 
 }

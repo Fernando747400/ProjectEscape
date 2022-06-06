@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Moonbase
+  m_Name: Moonbase_No_Emissive
   m_Shader: {fileID: 4800000, guid: 031e5f82c47f1ad4a999675926dfca11, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
@@ -127,7 +127,7 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Colour_Emissive: {r: 0, g: 1, b: 1, a: 0}
+    - _Colour_Emissive: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _Colour_Hair: {r: 1, g: 1, b: 1, a: 0}
     - _Colour_Primary: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 0}
     - _Colour_Secondary: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 0}

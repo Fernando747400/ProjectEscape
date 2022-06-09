@@ -9,6 +9,6 @@ public class Fuze : InteractableObjects, IUsable
     public void Use()
     {
         Debug.Log("Debería apagarse" + this.gameObject.name);
-        gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }

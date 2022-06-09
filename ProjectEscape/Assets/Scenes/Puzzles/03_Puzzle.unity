@@ -372,72 +372,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1001 &6444883751233957881
+--- !u!1001 &4857836710416997330
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6444883751942205660, guid: 6a394795a3754dd4981673b81592e57c,
-        type: 3}
-      propertyPath: m_Name
-      value: Puzle_Crafteo
-      objectReference: {fileID: 0}
-    - target: {fileID: 6444883751942205663, guid: 6a394795a3754dd4981673b81592e57c,
+    - target: {fileID: 4857836710774359284, guid: db49e16569460f945b826b743de35845,
         type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 6444883751942205663, guid: 6a394795a3754dd4981673b81592e57c,
+    - target: {fileID: 4857836710774359284, guid: db49e16569460f945b826b743de35845,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6444883751942205663, guid: 6a394795a3754dd4981673b81592e57c,
+    - target: {fileID: 4857836710774359284, guid: db49e16569460f945b826b743de35845,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6444883751942205663, guid: 6a394795a3754dd4981673b81592e57c,
+    - target: {fileID: 4857836710774359284, guid: db49e16569460f945b826b743de35845,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6444883751942205663, guid: 6a394795a3754dd4981673b81592e57c,
+    - target: {fileID: 4857836710774359284, guid: db49e16569460f945b826b743de35845,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6444883751942205663, guid: 6a394795a3754dd4981673b81592e57c,
+    - target: {fileID: 4857836710774359284, guid: db49e16569460f945b826b743de35845,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6444883751942205663, guid: 6a394795a3754dd4981673b81592e57c,
+    - target: {fileID: 4857836710774359284, guid: db49e16569460f945b826b743de35845,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6444883751942205663, guid: 6a394795a3754dd4981673b81592e57c,
+    - target: {fileID: 4857836710774359284, guid: db49e16569460f945b826b743de35845,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6444883751942205663, guid: 6a394795a3754dd4981673b81592e57c,
+    - target: {fileID: 4857836710774359284, guid: db49e16569460f945b826b743de35845,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6444883751942205663, guid: 6a394795a3754dd4981673b81592e57c,
+    - target: {fileID: 4857836710774359284, guid: db49e16569460f945b826b743de35845,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6444883751942205663, guid: 6a394795a3754dd4981673b81592e57c,
+    - target: {fileID: 4857836710774359284, guid: db49e16569460f945b826b743de35845,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4857836710774359287, guid: db49e16569460f945b826b743de35845,
+        type: 3}
+      propertyPath: m_Name
+      value: Puzle_Crafteo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6a394795a3754dd4981673b81592e57c, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: db49e16569460f945b826b743de35845, type: 3}

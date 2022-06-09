@@ -388,77 +388,77 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &8900623573182214632
+--- !u!1001 &183066751872955929
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8900623572887777667, guid: f2ddf392a33aa2040a35478b42bb2331,
-        type: 3}
-      propertyPath: m_Name
-      value: PuzzleDesatornillador
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900623572887777668, guid: f2ddf392a33aa2040a35478b42bb2331,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900623572887777668, guid: f2ddf392a33aa2040a35478b42bb2331,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900623572887777668, guid: f2ddf392a33aa2040a35478b42bb2331,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900623572887777668, guid: f2ddf392a33aa2040a35478b42bb2331,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900623572887777668, guid: f2ddf392a33aa2040a35478b42bb2331,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900623572887777668, guid: f2ddf392a33aa2040a35478b42bb2331,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900623572887777668, guid: f2ddf392a33aa2040a35478b42bb2331,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900623572887777668, guid: f2ddf392a33aa2040a35478b42bb2331,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900623572887777668, guid: f2ddf392a33aa2040a35478b42bb2331,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900623572887777668, guid: f2ddf392a33aa2040a35478b42bb2331,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900623572887777668, guid: f2ddf392a33aa2040a35478b42bb2331,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900623573021064403, guid: f2ddf392a33aa2040a35478b42bb2331,
+    - target: {fileID: 183066751948258082, guid: c1866c13bcc00fc40b1145ed1bb8f5e7,
         type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 23633431}
+    - target: {fileID: 183066752083408498, guid: c1866c13bcc00fc40b1145ed1bb8f5e7,
+        type: 3}
+      propertyPath: m_Name
+      value: PuzzleDesatornillador
+      objectReference: {fileID: 0}
+    - target: {fileID: 183066752083408501, guid: c1866c13bcc00fc40b1145ed1bb8f5e7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 183066752083408501, guid: c1866c13bcc00fc40b1145ed1bb8f5e7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183066752083408501, guid: c1866c13bcc00fc40b1145ed1bb8f5e7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183066752083408501, guid: c1866c13bcc00fc40b1145ed1bb8f5e7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183066752083408501, guid: c1866c13bcc00fc40b1145ed1bb8f5e7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 183066752083408501, guid: c1866c13bcc00fc40b1145ed1bb8f5e7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183066752083408501, guid: c1866c13bcc00fc40b1145ed1bb8f5e7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183066752083408501, guid: c1866c13bcc00fc40b1145ed1bb8f5e7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183066752083408501, guid: c1866c13bcc00fc40b1145ed1bb8f5e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183066752083408501, guid: c1866c13bcc00fc40b1145ed1bb8f5e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183066752083408501, guid: c1866c13bcc00fc40b1145ed1bb8f5e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f2ddf392a33aa2040a35478b42bb2331, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: c1866c13bcc00fc40b1145ed1bb8f5e7, type: 3}

@@ -25,7 +25,6 @@ public class CarGate : MonoBehaviour
         if(Tornillos.Length == 0)
         {
             carGate.SetActive(false);
-           
         }
     }
 

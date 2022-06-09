@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Dialogue
 {
     public string character;
-    public Image image;
     public Sprite Sprite;
 
     [TextArea(3,10)]

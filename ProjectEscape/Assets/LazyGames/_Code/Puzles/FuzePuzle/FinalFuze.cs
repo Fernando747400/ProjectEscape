@@ -53,6 +53,7 @@ public class FinalFuze : MonoBehaviour, IUsable
         if (GameManager.current != null)
         {
             Debug.Log("<color =#FFC733> Se suscribe el evento </color>");
+
             GameManager.current.activateInteracting();
 
         }

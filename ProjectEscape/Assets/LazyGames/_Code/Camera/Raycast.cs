@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using Lean.Touch;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Linq;
 //[|87
 public class Raycast : MonoBehaviour
 {
 
+	
 	Mouse mouse;
 	Camera myCamera;
 
@@ -22,6 +24,9 @@ public class Raycast : MonoBehaviour
 
 	[Header("Debugging")]
 	[SerializeField] Logger logger;
+	
+	List<IUsable> usables = new List<IUsable>();
+
 
 
     private void Start()
@@ -50,36 +55,7 @@ public class Raycast : MonoBehaviour
 		LeanTouch.OnFingerDown += GetViewInfoTouch;
 	}
     
-	/*void GetViewInfo()
-	{
-		if(playerController.PlayerState == PlayerStates.NoInteracting)
-        {
-			RaycastHit hit;
-			Vector2 coordinate = new Vector2(Screen.width / 2, Screen.height / 2); //Gets the position of the middle of the screen
-			Ray myRay = myCamera.ScreenPointToRay(coordinate); //Defines a ray from the given screen coordinate
-			if (Physics.Raycast(myRay, out hit, maxDistance, usablesMask.value)) //Raycast only interacts with objects that are on the Usables layer mask.
-			{
-				Log("Raycast hitted: " + hit.transform.gameObject.name);
-				IUsable usable = hit.transform.GetComponent<IUsable>(); //Double checks to see if the object has the IUsable interface inherited. 
-				IUsable cameraUsable = hit.transform.GetComponent<CameraSwitcher>(); //Checks to see if we need to move the camera 
-				if (usable != null)
-				{
-					usable.Use();
-				}
-				if (cameraUsable != null)
-				{
-					cameraUsable.Use();
-					Log("Changed camera Position");
-				}
-			}
-			else
-			{
-				Log("Didn't hit anything on the usables mask");
-			}
-        }
-	}
-	*/
-
+	
 	void GetViewInfoTouch(LeanFinger finger)
 	{
 		if (playerController.PlayerState == PlayerStates.NoInteracting)
@@ -98,26 +74,20 @@ public class Raycast : MonoBehaviour
 				{
 					Log("Raycast hitted: " + hit.transform.gameObject.name);
 
-					IUsable usable = hit.transform.GetComponent<IUsable>(); ////Double checks to see if the object has the IUsable interface inherited. 
-					IUsable cameraUsable = hit.transform.GetComponent<CameraSwitcher>(); //Checks to see if we need to move the camera 
-					Log(usable);
+					usables.Clear();
+					usables = hit.transform.GetComponents<IUsable>().ToList(); ////Double checks to see if the object has the IUsable interface inherited. 
 					InteractableObjects interactableObjects = hit.transform.GetComponent<InteractableObjects>();
 					
-					if (usable != null)
+					if (usables.Count > 0)
 					{
-						Log("Call USABLE  " + usable.ToString());
-
-						usable.Use();
+						foreach(var Usable in usables)
+                        {
+							Usable.Use();
+                        }
 						if (interactableObjects != null)
 						{
 							interactableObjects.SendInfoObjectToInventory();
 						}
-					}
-
-					if (cameraUsable != null)
-					{
-						cameraUsable.Use();
-						Log("Changed camera Position");
 					}
 				}
                 else { 

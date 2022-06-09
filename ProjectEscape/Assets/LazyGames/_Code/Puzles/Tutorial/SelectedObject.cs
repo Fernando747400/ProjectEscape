@@ -2,18 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Lean.Touch;
-using Lean.Common;
+//using Lean.Touch;
+//using Lean.Common;
 
 public class SelectedObject : MonoBehaviour
 {
     [SerializeField] private Camera myCamera;
     [SerializeField] private BoxCollider PuzzleColliderBox;
-    [SerializeField] private LeanDragTranslate[] myLeanDrags;
+    //[SerializeField] private LeanDragTranslate[] myLeanDrags;
 
-    private LeanDragTranslate lean;
+    //private LeanDragTranslate lean;
     private void Start()
     {
+        /*
         LeanTouch.OnFingerDown += GetViewInfoTouch;
         LeanTouch.OnFingerUp += TurnOffLeans;
        
@@ -22,6 +23,7 @@ public class SelectedObject : MonoBehaviour
             Debug.Assert("<color=#FFC733> Existen lean drags </color>" +  myLeanDrags != null + this.name);
             myLeanDrags[i].enabled = false;
         }
+        */
 
     }
 
@@ -38,6 +40,7 @@ public class SelectedObject : MonoBehaviour
 
     }
 
+    /*
     void TurnOffLeans(LeanFinger finger)
     {
         if (finger.Up)
@@ -49,6 +52,7 @@ public class SelectedObject : MonoBehaviour
         }
        
     }
+    
     
 
     void GetViewInfoTouch(LeanFinger finger)
@@ -70,5 +74,5 @@ public class SelectedObject : MonoBehaviour
         }
        
     }
-
+    */
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public GameObject Boxtext;
 
-    public GameObject currentImage;
+    public Image currentImage;
 
     void Start()
     {
@@ -33,9 +34,10 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         textIsPlaying = true;
+
+        currentImage.gameObject.SetActive(true);
+        currentImage.sprite = dialogue.Sprite;
        
-        currentImage = dialogue.image.gameObject;
-        currentImage.SetActive(true);
         
         if (inputCanvas != null)
         {
@@ -89,8 +91,8 @@ public class DialogueManager : MonoBehaviour
         buttonContinue.SetActive(false);
         textIsPlaying = false;
         
-        currentImage.SetActive(false);
-        currentImage = null;
+        currentImage.gameObject.SetActive(false);
+        // currentImage = null;
         
         if (PlayerController.current != null)
         {
@@ -98,6 +100,12 @@ public class DialogueManager : MonoBehaviour
             {
                 inputCanvas.gameObject.SetActive(true);
             }
+            else
+            if (PlayerController.current.GetPlayerState(PlayerStates.Interacting))
+            {
+                inputCanvas.gameObject.SetActive(false);
+            }
+   
         }
         
     }

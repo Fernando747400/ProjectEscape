@@ -21,7 +21,7 @@ public class OtherconcionalTutorial: MonoBehaviour
             // Call Event open door
             //FindObjectOfType<AudioManager>().Play("Card_Slide");
 
-            // GameManager.current.openShipDoor();
+            GameManager.current.openShipDoor();
         }
         else if (other.tag == "bad")
         {

@@ -10,9 +10,14 @@ public class Card : InteractableObjects, IUsable
     public void Use()
     {
         GameManager.current.showCardConsole();
-        this.gameObject.SetActive(false);
+        StartCoroutine(DelayTookObject());
     }
-    
-    
+
+    IEnumerator DelayTookObject()
+    {
+        yield return new WaitForSeconds(0.2f);
+        this.gameObject.SetActive(false);
+
+    }
     
 }

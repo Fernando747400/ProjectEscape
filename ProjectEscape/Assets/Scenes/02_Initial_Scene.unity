@@ -3580,6 +3580,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1918270628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &682457638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8576139165763021676, guid: 8e0b5cebb0976144aa0438efff5372d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1018752456}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 181971dabe7a23d4bab1ec4f204a891e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &696653723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5518,6 +5530,11 @@ PrefabInstance:
       propertyPath: inputCanvas
       value: 
       objectReference: {fileID: 1632710880}
+    - target: {fileID: 8576139165763021650, guid: 8e0b5cebb0976144aa0438efff5372d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3177019959894252626, guid: 8e0b5cebb0976144aa0438efff5372d4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8e0b5cebb0976144aa0438efff5372d4, type: 3}
@@ -13983,6 +14000,7 @@ GameObject:
   - component: {fileID: 249876975}
   - component: {fileID: 249876972}
   - component: {fileID: 249876973}
+  - component: {fileID: 6217817089851345628}
   m_Layer: 6
   m_Name: PuzzleTutorial
   m_TagString: Untagged
@@ -13990,6 +14008,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6217817089851345628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6217817089851345627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b0ed7949cbc28b42bc9d58362d3cbce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogGO: {fileID: 1018752458}
+  DialogueToTrigger: {fileID: 682457638}
 --- !u!1001 &6307667018963844653
 PrefabInstance:
   m_ObjectHideFlags: 0

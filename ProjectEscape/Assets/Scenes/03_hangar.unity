@@ -2259,7 +2259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f2743445ee85f49bf24b97814ca81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemTarget: {fileID: 0}
+  itemTarget: {fileID: 478751289}
   itemData: {fileID: 11400000, guid: 61aa83f4d901e744abd3b787d4a3134d, type: 2}
 --- !u!65 &582623359
 BoxCollider:
@@ -3453,8 +3453,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCamera: {fileID: 1886534869}
   PuzzleColliderBox: {fileID: 2126994845}
-  myLeanDrags:
-  - {fileID: 2126994846}
 --- !u!114 &845311515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5289,8 +5287,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCamera: {fileID: 1498304516}
   PuzzleColliderBox: {fileID: 1499327629}
-  myLeanDrags:
-  - {fileID: 1053845967}
 --- !u!4 &1526503812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4852003242600082, guid: 95f365e64d7a67b47b3a250cd9cbe5b9,
@@ -6237,8 +6233,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCamera: {fileID: 54340248}
   PuzzleColliderBox: {fileID: 1854241902}
-  myLeanDrags:
-  - {fileID: 574336922}
 --- !u!114 &1854241904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7473,18 +7467,6 @@ BoxCollider:
     type: 3}
   m_PrefabInstance: {fileID: 2126994841}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2126994846 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8900623573021064403, guid: f2ddf392a33aa2040a35478b42bb2331,
-    type: 3}
-  m_PrefabInstance: {fileID: 2126994841}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126994842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eda371e5375f454490a86f21559ee38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2140976646
 GameObject:
   m_ObjectHideFlags: 0

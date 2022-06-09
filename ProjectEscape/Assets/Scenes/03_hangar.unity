@@ -5,11 +5,12 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 5
+    smallestOccluder: 2
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 7b310f82723247245ab4545739cacbda
+  m_OcclusionCullingData: {fileID: 36300000, guid: 03c591914d01e9b41ab1252d0c6a4ba6,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -867,6 +868,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
+        type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
+        type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
+        type: 3}
+      propertyPath: sounds.Array.data[2].volumeVariance
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5350590331435652615, guid: 0a01b17990ef16842ae53587073534f7,
         type: 3}
@@ -2924,8 +2940,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.01
+  far clip plane: 150
   field of view: 60
   orthographic: 0
   orthographic size: 5

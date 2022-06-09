@@ -2,7 +2,7 @@ using System.Net.Mime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Lean.Touch;
+//using Lean.Touch;
 using UnityEngine.UI;
 
 public class Item_nventoryUI :SelectableItem
@@ -17,7 +17,7 @@ public class Item_nventoryUI :SelectableItem
 
     private LayerMask layer;
     private ItemInventoryData itemData;
-    private LeanFinger m_DraggingFinger;
+    //private LeanFinger m_DraggingFinger;
 
     private Vector3 originalPosition;
 

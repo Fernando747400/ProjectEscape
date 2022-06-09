@@ -5,41 +5,41 @@ using UnityEngine;
 public class FinalFuze : MonoBehaviour, IUsable
 {
     public GameObject[] Fuzes;
-    public int cameraPlaceArray = 1;
-
+    public int cameraPlaceArray = 3;
+    public bool DontRepeat = false;
 
     void Start()
     {
-
-       
+        DontRepeat = false;
     }
     void Update()
     {
        Fuzes = GameObject.FindGameObjectsWithTag("Fuzes");
+        CheckPuzzleState(); 
     }
 
 
     public void CheckPuzzleState()
     {
-        if (Fuzes.Length == 3)
-        { 
-            PlayerController.current.DeactivateInteracting();
-            CameraHandler.current.SelectCamera(cameraPlaceArray);
-            PlayerController.current.SetPlayerInCinematic();
+        if(Fuzes.Length == 4 && DontRepeat == false)
+        {
             StartCoroutine(WaitOpenDoor());
-
         }
     }
 
     IEnumerator WaitOpenDoor()
     {
+        Debug.Log("Door Open");
+        PlayerController.current.DeactivateInteracting();
+        CameraHandler.current.SelectCamera(cameraPlaceArray);
+        PlayerController.current.SetPlayerInCinematic();
         yield return new WaitForSeconds(1);
         GameManager.current.openSecondDooor();
         yield return new WaitForSeconds(5);
         CameraHandler.current.SwitchToPlayerCamera();
         PlayerController.current.UnSetPlayerCinematic();
 
-
+        DontRepeat = true;
     }
     
     public bool CanInteract

@@ -10,7 +10,7 @@ public class CardConsole : MonoBehaviour, IUsable
     public void Start()
     {
         GameManager.current.ShowCardConsole += show;
-        this.gameObject.SetActive(false);
+        // this.gameObject.SetActive(false);
     }
 
     public void OnDestroy()
@@ -19,7 +19,7 @@ public class CardConsole : MonoBehaviour, IUsable
     }
     private void show()
     {
-        this.gameObject.SetActive(true);
+        // this.gameObject.SetActive(true);
     }
 
     public void Use()

@@ -18,7 +18,8 @@ TagManager:
   - World
   - Props
   - Room
-  - Mirror
+  - UI_Interactions
+  - Potion
   layers:
   - Default
   - TransparentFX

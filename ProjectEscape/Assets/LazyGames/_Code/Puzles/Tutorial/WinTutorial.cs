@@ -1,13 +1,10 @@
 using UnityEngine;
-using Lean.Touch;
-using Lean.Common;
 
 public class WinTutorial : MonoBehaviour
 {
     public GameObject Cristal;
     public Material Bombilla;
     public Material BombillaUno;
-    public GameObject Palanca;
 
     public void Start()
     {
@@ -22,14 +19,11 @@ public class WinTutorial : MonoBehaviour
         {
             Bombilla.color = Color.green;
             Cristal.gameObject.SetActive(false);
-            Palanca.gameObject.GetComponent<LeanTwistRotateAxis>().enabled = true;
         }
         else if(other.tag == "bad")
         {
             Bombilla.color = Color.white;
             Cristal.gameObject.SetActive(true);
-            Palanca.gameObject.GetComponent<LeanTwistRotateAxis>().enabled = false;
-
         }
     }
 }

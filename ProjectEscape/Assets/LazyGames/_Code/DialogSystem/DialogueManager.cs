@@ -35,8 +35,9 @@ public class DialogueManager : MonoBehaviour
     {
         textIsPlaying = true;
 
-        currentImage.sprite = dialogue.Sprite;
         currentImage.gameObject.SetActive(true);
+        currentImage.sprite = dialogue.Sprite;
+       
         
         if (inputCanvas != null)
         {
@@ -91,7 +92,7 @@ public class DialogueManager : MonoBehaviour
         textIsPlaying = false;
         
         currentImage.gameObject.SetActive(false);
-        currentImage = null;
+        // currentImage = null;
         
         if (PlayerController.current != null)
         {
@@ -99,6 +100,12 @@ public class DialogueManager : MonoBehaviour
             {
                 inputCanvas.gameObject.SetActive(true);
             }
+            else
+            if (PlayerController.current.GetPlayerState(PlayerStates.Interacting))
+            {
+                inputCanvas.gameObject.SetActive(false);
+            }
+   
         }
         
     }

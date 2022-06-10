@@ -463,8 +463,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.578686, y: 0.21137723, z: 0.32082105}
-  m_Center: {x: -0.0035717315, y: 0.016341396, z: -0.092634834}
+  m_Size: {x: 0.578686, y: 0.42779225, z: 0.5198989}
+  m_Center: {x: -0.0035717115, y: -0.09186627, z: -0.08814746}
 --- !u!114 &100647874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10916,8 +10916,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25615487, y: 0.4995134, z: 0.4509708}
-  m_Center: {x: 0.00425103, y: 0.18810773, z: -0.1475707}
+  m_Size: {x: 0.34165427, y: 0.7909236, z: 0.38472944}
+  m_Center: {x: -0.012376699, y: 0.16809326, z: -0.11444948}
 --- !u!33 &4308109540003590370
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12998,19 +12998,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!65 &7103839567646568232
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103839567646568235}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.0465086, y: 0.57632375, z: 3.8484435}
-  m_Center: {x: 0, y: 0.28816187, z: 0}
 --- !u!1 &7103839567646568235
 GameObject:
   m_ObjectHideFlags: 0
@@ -13022,7 +13009,6 @@ GameObject:
   - component: {fileID: 7106028186737349645}
   - component: {fileID: 7126244593959260447}
   - component: {fileID: 7115882773486605771}
-  - component: {fileID: 7103839567646568232}
   m_Layer: 6
   m_Name: SM_Prop_Hydroponic_Planter_01
   m_TagString: Untagged

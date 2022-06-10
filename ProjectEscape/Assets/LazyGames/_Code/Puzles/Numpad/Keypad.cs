@@ -10,6 +10,8 @@ public class Keypad : MonoBehaviour
     private bool DontRepeat = false;
     public int cameraPlaceArray = 3;
 
+    public string stinger;
+
     private void Start()
     {
         ShowInput.text = "";
@@ -42,7 +44,9 @@ public class Keypad : MonoBehaviour
         if(UserInput == pasword && DontRepeat == false)
         {
             ShowInput.text = "great";
+            if (stinger != null || stinger != "") PlaySound(stinger);
             StartCoroutine(WaitOpenDoor());
+            DontRepeat = true;
         }
         if(UserInput != pasword)
         {
@@ -63,7 +67,12 @@ public class Keypad : MonoBehaviour
         CameraHandler.current.SwitchToPlayerCamera();
         PlayerController.current.UnSetPlayerCinematic();
 
-        DontRepeat = true;
+       
     }
-    
+
+    public void PlaySound(string _sound)
+    {
+        AudioManager.instance.Play(_sound);
+    }
+
 }

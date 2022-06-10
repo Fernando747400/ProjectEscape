@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f99a6bcae2387749843bd83af7fb0ba, type: 3}
   m_Name: PotionRed
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  itemImage: {fileID: 21300000, guid: 24bf3cd06a86d30498930db05bfcaf81, type: 3}
   nameItem: RedP
   namePuzzle: 
   MyPoolKey: item

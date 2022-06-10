@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000018293644, g: 0.000000032979298, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.00001829362, g: 0.000000032979298, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12840,7 +12840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemTarget: {fileID: 416867926}
-  itemData: {fileID: 11400000, guid: d6dca4c53af7322499f8245e6fa5ee54, type: 2}
+  itemData: {fileID: 11400000, guid: aa25cc709c4500448b2dcd06fe08a89b, type: 2}
   sound: "P\xEFck"
 --- !u!65 &2049903665
 BoxCollider:

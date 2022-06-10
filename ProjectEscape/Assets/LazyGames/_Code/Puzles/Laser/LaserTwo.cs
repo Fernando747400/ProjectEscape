@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Laser : MonoBehaviour
+public class LaserTwo : MonoBehaviour
 {
     private LineRenderer lr;
     [SerializeField]
@@ -21,15 +21,15 @@ public class Laser : MonoBehaviour
     {
         lr.SetPosition(0, startPoint.position);
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, -transform.right, out hit))
+        if (Physics.Raycast(transform.position, -transform.right, out hit))
         {
-            if(hit.collider)
+            if (hit.collider)
             {
                 lr.SetPosition(1, hit.point);
-                if(hit.collider.tag == "EndGame")
+                if (hit.collider.tag == "EndGame")
                 {
                     End = true;
-                    //Debug.Log("FinalOne");
+                    //Debug.Log("FinalTwo");
                 }
                 else
                 {

@@ -127,7 +127,7 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Colour_Emissive: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _Colour_Emissive: {r: 0.059229266, g: 0.09964788, b: 0.103773594, a: 0}
     - _Colour_Hair: {r: 1, g: 1, b: 1, a: 0}
     - _Colour_Primary: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 0}
     - _Colour_Secondary: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 0}

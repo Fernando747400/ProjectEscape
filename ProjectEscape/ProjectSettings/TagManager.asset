@@ -19,6 +19,7 @@ TagManager:
   - Props
   - Room
   - UI_Interactions
+  - Room_1
   layers:
   - Default
   - TransparentFX

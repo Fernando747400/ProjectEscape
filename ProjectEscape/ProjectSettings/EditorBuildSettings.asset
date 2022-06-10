@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/00_Menu.unity
     guid: 3bf4c575492662549951fa4c13be36fa
   - enabled: 1
+    path: Assets/Scenes/00.1_Intro.unity
+    guid: 36bb66ac2fd9112459a85e4e5e5177a3
+  - enabled: 1
     path: Assets/Scenes/01_Splash_Screen.unity
     guid: 23f2c0a4e56f90b439e7de8577f9d64d
   - enabled: 1
@@ -17,6 +20,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/03_hangar.unity
     guid: 7b310f82723247245ab4545739cacbda
+  - enabled: 1
+    path: Assets/Scenes/00.2_MoonBreak.unity
+    guid: 56cab09c53d3a3e4aa6fed9d83eb2303
+  - enabled: 1
+    path: Assets/Scenes/00.3_EarthBreak.unity
+    guid: 869dd97343c2d4f43b8c3a42361a3d30
+  - enabled: 1
+    path: Assets/Scenes/05_Credits.unity
+    guid: 781b2553faa829b489afa82188a7ed74
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 7ec2f9099cb7d9a4c9841eebf673723b,
       type: 2}

@@ -428,6 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2cfc9752ca3fd34fb57ef6f1af285d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particles: {fileID: 0}
   targetPosition: {x: 12.000004, y: 0.15086919, z: -3.5500023}
 --- !u!65 &66328174
 BoxCollider:
@@ -3805,6 +3806,56 @@ MonoBehaviour:
     pitchVariance: 0.33
     loop: 0
     oneShot: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Card_Slide
+    clip: {fileID: 8300000, guid: 70ec730e5ecfa3945925aff737638d92, type: 3}
+    volume: 0.3
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    oneShot: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Acceso_consola
+    clip: {fileID: 8300000, guid: 36bc1cedcd8ab9c479428fb4249675ad, type: 3}
+    volume: 0.3
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    oneShot: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Palanca
+    clip: {fileID: 8300000, guid: 192fd6bcab4545e4cb154befb0796935, type: 3}
+    volume: 0.3
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    oneShot: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Stinger
+    clip: {fileID: 8300000, guid: 007d3eb3c44d7d7458d74b4a344e4058, type: 3}
+    volume: 0.3
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    oneShot: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Ambient
+    clip: {fileID: 8300000, guid: 85e4f1b83ed502d4ab1fce9b8905289f, type: 3}
+    volume: 0.1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    oneShot: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
 --- !u!4 &649596998
@@ -19154,6 +19205,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cristal: {fileID: 7290372755754239283}
   Bombilla: {fileID: 2100000, guid: b9b0c8ec4f24afc4bb0e862ee579fd20, type: 2}
+  sound: Palanca
+  stinger: Stinger
 --- !u!65 &8219864299874891465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19487,6 +19540,7 @@ MonoBehaviour:
   Cristal: {fileID: 7290372755754239283}
   Bombilla: {fileID: 2100000, guid: 9f55bbab457c9b44d90198908bf6ebea, type: 2}
   BombillaUno: {fileID: 2100000, guid: 286780c5dfcbc974f8af9f63157aac77, type: 2}
+  sound: Acceso_consola
 --- !u!1 &8219864300336195462
 GameObject:
   m_ObjectHideFlags: 0
@@ -19875,6 +19929,7 @@ MonoBehaviour:
   Cristal: {fileID: 8219864299949827329}
   Bombilla: {fileID: 2100000, guid: 9f55bbab457c9b44d90198908bf6ebea, type: 2}
   BombillaUno: {fileID: 2100000, guid: 286780c5dfcbc974f8af9f63157aac77, type: 2}
+  sound: Card_Slide
 --- !u!4 &8222855495224692723
 Transform:
   m_ObjectHideFlags: 0

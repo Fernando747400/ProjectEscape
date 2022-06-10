@@ -6,6 +6,8 @@ public class Door : MonoBehaviour,IUsable
 {
     private Collider collider;
     public GameObject particles;
+
+    public string nameSFX = "Door_Open";
     public bool CanInteract
     {
         get;
@@ -20,6 +22,7 @@ public class Door : MonoBehaviour,IUsable
         {
             GameManager.current.OpenShipDoor += Open;
             GameManager.current.OpenSecondDoor += Open;
+            GameManager.current.OpenThirdDoor+= Open;
             Debug.Log("Se susbcribe puerta " + this.gameObject.name);
 
         }
@@ -37,6 +40,7 @@ public class Door : MonoBehaviour,IUsable
         {
             GameManager.current.OpenShipDoor -= Open;
             GameManager.current.OpenSecondDoor -= Open;
+            GameManager.current.OpenThirdDoor -= Open;
 
         }
     }
@@ -59,6 +63,10 @@ public class Door : MonoBehaviour,IUsable
             particles.SetActive(false);
         }
         iTween.MoveTo(this.gameObject, iTween.Hash("position",targetPosition, "time",5));
-        FindObjectOfType<AudioManager>().Play("Door_Open");
+
+        if (nameSFX != null)
+        {
+            AudioManager.instance.Play(nameSFX);
+        }
     }
 }

@@ -42,7 +42,7 @@ public class Keypad : MonoBehaviour
         if(UserInput == pasword && DontRepeat == false)
         {
             ShowInput.text = "great";
-            //StartCoroutine(WaitOpenDoor());
+            StartCoroutine(WaitOpenDoor());
         }
         if(UserInput != pasword)
         {
@@ -51,19 +51,19 @@ public class Keypad : MonoBehaviour
         }
     }
 
-    /*
+    
     IEnumerator WaitOpenDoor()
     {
         PlayerController.current.DeactivateInteracting();
         CameraHandler.current.SelectCamera(cameraPlaceArray);
         PlayerController.current.SetPlayerInCinematic();
         yield return new WaitForSeconds(1);
-        GameManager.current.openSecondDooor();
+        GameManager.current.openThirdDooor();
         yield return new WaitForSeconds(5);
         CameraHandler.current.SwitchToPlayerCamera();
         PlayerController.current.UnSetPlayerCinematic();
 
         DontRepeat = true;
     }
-    ¨*/
+    
 }

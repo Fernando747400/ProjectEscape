@@ -21,6 +21,7 @@ TagManager:
   - UI_Interactions
   - Potion
   - NumButton
+  - Room_1
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - UI
   - Usable
   - ItemsInventory
-  - 
+  - Particles
   - 
   - 
   - 

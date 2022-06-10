@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4730346605982222234}
   - component: {fileID: 4730346605982222235}
   - component: {fileID: 4730346605982222228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PropParticlesMainItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

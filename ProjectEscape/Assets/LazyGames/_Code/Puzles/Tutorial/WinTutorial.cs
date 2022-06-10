@@ -5,6 +5,7 @@ public class WinTutorial : MonoBehaviour
     public GameObject Cristal;
     public Material Bombilla;
     public Material BombillaUno;
+    public string sound;
 
     public void Start()
     {
@@ -19,11 +20,18 @@ public class WinTutorial : MonoBehaviour
         {
             Bombilla.color = Color.green;
             Cristal.gameObject.SetActive(false);
+            if(sound != null ||  sound != "") PlaySound(sound);
+
         }
         else if(other.tag == "bad")
         {
             Bombilla.color = Color.white;
             Cristal.gameObject.SetActive(true);
         }
+    }
+
+    public void PlaySound(string _sound)
+    {
+        AudioManager.instance.Play(_sound);
     }
 }

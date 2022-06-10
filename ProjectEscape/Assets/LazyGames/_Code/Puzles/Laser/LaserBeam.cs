@@ -10,6 +10,8 @@ public class LaserBeam
     LineRenderer laser;
     List<Vector3> laserIndices = new List<Vector3>();
 
+    public bool End = false;
+
     public LaserBeam(Vector3 pos, Vector3 dir, Material material)
     {
         this.laser = new LineRenderer();
@@ -67,6 +69,7 @@ public class LaserBeam
             Vector3 dir = Vector3.Reflect(direction, hitInfo.normal);
 
             CastRay(pos, dir, laser);
+
         }
         else
         {

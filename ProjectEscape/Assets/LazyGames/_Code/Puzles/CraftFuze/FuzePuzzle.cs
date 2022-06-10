@@ -7,6 +7,7 @@ public class FuzePuzzle : MonoBehaviour, IUsable
     public GameObject[] Parts;
     public GameObject placeFuze;
     public bool isUsed = false;
+    public string sound;
 
     public bool CanInteract
     {
@@ -29,15 +30,19 @@ public class FuzePuzzle : MonoBehaviour, IUsable
         if (Parts.Length == 2 && isUsed == false)
         {
             placeFuze.SetActive(true);
+            if (sound != null || sound != "") PlaySound(sound);
             isUsed = true;
         }
     }
 
-    
-
-
+  
     public void Use()
     {
         GameManager.current.activateInteracting();
+    }
+
+    public void PlaySound(string _sound)
+    {
+        AudioManager.instance.Play(_sound);
     }
 }

@@ -423,6 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTarget: {fileID: 336255566}
   itemData: {fileID: 11400000, guid: 16d47983389b5374193d0b044b8686ec, type: 2}
+  sound: Pick
 --- !u!114 &100647871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,151 +875,6 @@ Transform:
   m_Father: {fileID: 1356635611}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 1.952, y: 181.804, z: 0.061}
---- !u!1001 &200320030
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1754000658}
-    m_Modifications:
-    - target: {fileID: 5350590331435652613, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652613, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.345107
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652613, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.425632
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652613, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 17.933619
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652613, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652613, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652613, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652613, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652613, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652613, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652613, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 274382f7bbddf664bb590cd1f88db4e8, type: 3}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.data[0].name
-      value: Door_Open
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: a7137e6c07d3f164d98c11ee7a54885e, type: 3}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.data[1].name
-      value: Player_Step
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.data[1].pitch
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.data[2].pitch
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.data[1].volume
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.data[2].volume
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.data[0].oneShot
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.data[1].oneShot
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.data[1].pitchVariance
-      value: 0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.data[1].volumeVariance
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652614, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: sounds.Array.data[2].volumeVariance
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350590331435652615, guid: 0a01b17990ef16842ae53587073534f7,
-        type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0a01b17990ef16842ae53587073534f7, type: 3}
---- !u!4 &200320031 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5350590331435652613, guid: 0a01b17990ef16842ae53587073534f7,
-    type: 3}
-  m_PrefabInstance: {fileID: 200320030}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &201375566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTarget: {fileID: 1826318899}
   itemData: {fileID: 11400000, guid: af9ef5ace6801cb4080df740fc97abab, type: 2}
+  sound: Pick
 --- !u!65 &279923156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2316,6 +2173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTarget: {fileID: 400937811}
   itemData: {fileID: 11400000, guid: a0517f7bbb1794e468a138a1a1df7733, type: 2}
+  sound: Pick
 --- !u!65 &530069685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2432,6 +2290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTarget: {fileID: 478751289}
   itemData: {fileID: 11400000, guid: 61aa83f4d901e744abd3b787d4a3134d, type: 2}
+  sound: Pick
 --- !u!114 &582623355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2850,6 +2709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTarget: {fileID: 400937811}
   itemData: {fileID: 11400000, guid: a0517f7bbb1794e468a138a1a1df7733, type: 2}
+  sound: Pick
 --- !u!65 &692443120
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2944,6 +2804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTarget: {fileID: 678814867}
   itemData: {fileID: 11400000, guid: 9105a36c6a7598741a921035a98d335d, type: 2}
+  sound: Pick
 --- !u!65 &759621746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3104,6 +2965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTarget: {fileID: 6603342412326949210}
   itemData: {fileID: 11400000, guid: 6811719e120972c4d8c200eab1d97150, type: 2}
+  sound: Pick
 --- !u!1 &833723463
 GameObject:
   m_ObjectHideFlags: 0
@@ -5519,7 +5381,7 @@ Transform:
   - {fileID: 1803181956}
   - {fileID: 1567037144}
   - {fileID: 1428618078}
-  - {fileID: 200320031}
+  - {fileID: 5350590331239543323}
   - {fileID: 76346501837730346}
   - {fileID: 951151575}
   m_Father: {fileID: 0}
@@ -5902,6 +5764,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fuzes: []
   cameraPlaceArray: 3
+  StingerSound: 
+  ElecStart: 
+  Electricity: 
 --- !u!4 &1857839095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4330716819619508, guid: bf6fe0ca4b9d4ee40b7c45a239350694,
@@ -5956,6 +5821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTarget: {fileID: 678814867}
   itemData: {fileID: 11400000, guid: 9105a36c6a7598741a921035a98d335d, type: 2}
+  sound: Pick
 --- !u!65 &1871205183
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10083,6 +9949,7 @@ MonoBehaviour:
   - {fileID: 0}
   placeFuze: {fileID: 827855408}
   isUsed: 0
+  sound: Stinger
 --- !u!114 &1748492177500619152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11009,6 +10876,208 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 6120263171302624803}
+--- !u!114 &5350590331239543320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350590331239543321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ba1a93fd61f0349a9ef63bb0828c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  sounds:
+  - name: Door_Open
+    clip: {fileID: 8300000, guid: 274382f7bbddf664bb590cd1f88db4e8, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 0.5
+    pitchVariance: 0
+    loop: 0
+    oneShot: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Player_Step
+    clip: {fileID: 8300000, guid: a7137e6c07d3f164d98c11ee7a54885e, type: 3}
+    volume: 0.1
+    volumeVariance: 0.05
+    pitch: 0.9
+    pitchVariance: 0.33
+    loop: 0
+    oneShot: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Stinger
+    clip: {fileID: 8300000, guid: 007d3eb3c44d7d7458d74b4a344e4058, type: 3}
+    volume: 0.3
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    oneShot: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Pick
+    clip: {fileID: 8300000, guid: 3746011da64d7e84daaf99ec78d4338f, type: 3}
+    volume: 0.3
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    oneShot: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: ElecStart
+    clip: {fileID: 8300000, guid: 5949397081b66f44996bebccf414cf3b, type: 3}
+    volume: 0.3
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    oneShot: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Elect
+    clip: {fileID: 8300000, guid: f8594539a37b3b1439a9f6094cb0f56c, type: 3}
+    volume: 0.15
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    oneShot: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+--- !u!1 &5350590331239543321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5350590331239543323}
+  - component: {fileID: 5350590331239543320}
+  - component: {fileID: 5350590331239543322}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &5350590331239543322
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350590331239543321}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 85e4f1b83ed502d4ab1fce9b8905289f, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &5350590331239543323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350590331239543321}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.345107, y: -4.425632, z: 17.933619}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1754000658}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5380562720076354429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11466,6 +11535,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fuzes: []
   cameraPlaceArray: 3
+  StingerSound: Stinger
+  ElecStart: ElecStart
+  Electricity: Elect
 --- !u!114 &6081710208434704753
 MonoBehaviour:
   m_ObjectHideFlags: 0

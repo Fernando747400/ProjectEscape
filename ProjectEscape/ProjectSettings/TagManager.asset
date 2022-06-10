@@ -22,6 +22,8 @@ TagManager:
   - Potion
   - NumButton
   - Room_1
+  - Mirror
+  - EndGame
   layers:
   - Default
   - TransparentFX

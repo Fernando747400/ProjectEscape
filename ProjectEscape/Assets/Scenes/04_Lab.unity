@@ -9465,11 +9465,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 53c14a63172529442ace2f2ed60f47f1, type: 2}
     - target: {fileID: 64827092039532284, guid: 60ef29983f04391428cf126e2e77d1d6,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 64827092039532284, guid: 60ef29983f04391428cf126e2e77d1d6, type: 3}
+    - target: {fileID: 64827092039532284, guid: 60ef29983f04391428cf126e2e77d1d6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60ef29983f04391428cf126e2e77d1d6, type: 3}
 --- !u!4 &1648943200 stripped
 Transform:

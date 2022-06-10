@@ -2832,7 +2832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &485971386
 Transform:
   m_ObjectHideFlags: 0
@@ -19098,8 +19098,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.812672, y: 2.8295422, z: 7.3035064}
-  m_Center: {x: -0.0000004914509, y: 3.6440487, z: -3.1724567}
+  m_Size: {x: 7.8126726, y: 2.7541597, z: 1.7328554}
+  m_Center: {x: 0.00000016814133, y: 3.6817186, z: -0.3870909}
 --- !u!114 &8219864299696529827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19206,7 +19206,7 @@ BoxCollider:
   m_GameObject: {fileID: 8219864299949827329}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -19487,6 +19487,7 @@ MonoBehaviour:
   Bombilla: {fileID: 2100000, guid: 9f55bbab457c9b44d90198908bf6ebea, type: 2}
   BombillaUno: {fileID: 2100000, guid: 286780c5dfcbc974f8af9f63157aac77, type: 2}
   sound: Acceso_consola
+  lebel: {fileID: 8219864299270807903}
 --- !u!1 &8219864300336195462
 GameObject:
   m_ObjectHideFlags: 0
@@ -19645,8 +19646,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.55919504, y: 4.554259, z: 0.5299401}
-  m_Center: {x: -0.013489005, y: 0.99448806, z: -0.050149646}
+  m_Size: {x: 0.5246712, y: 4.0096188, z: 1.3785026}
+  m_Center: {x: -0.0056063393, y: 0.7221616, z: 0.034224033}
 --- !u!4 &8219864300336195471
 Transform:
   m_ObjectHideFlags: 0
@@ -19873,9 +19874,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cristal: {fileID: 8219864299949827329}
-  Bombilla: {fileID: 2100000, guid: 9f55bbab457c9b44d90198908bf6ebea, type: 2}
+  Bombilla: {fileID: 2100000, guid: 286780c5dfcbc974f8af9f63157aac77, type: 2}
   BombillaUno: {fileID: 2100000, guid: 286780c5dfcbc974f8af9f63157aac77, type: 2}
   sound: Card_Slide
+  lebel: {fileID: 8219864300336195462}
 --- !u!4 &8222855495224692723
 Transform:
   m_ObjectHideFlags: 0
@@ -19884,7 +19886,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8221055866450624419}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.46, y: 2.2000003, z: 3}
+  m_LocalPosition: {x: -1.73, y: 2.2000003, z: 3}
   m_LocalScale: {x: 41.308865, y: 41.30886, z: 41.30886}
   m_Children: []
   m_Father: {fileID: 9187507036246112882}

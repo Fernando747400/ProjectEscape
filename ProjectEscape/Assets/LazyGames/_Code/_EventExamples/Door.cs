@@ -13,6 +13,7 @@ public class Door : MonoBehaviour
         {
             GameManager.current.OpenShipDoor += Open;
             GameManager.current.OpenSecondDoor += Open;
+            Debug.Log("Se susbcribe puerta " + this.gameObject.name);
 
         }
     }

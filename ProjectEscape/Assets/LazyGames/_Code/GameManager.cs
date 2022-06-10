@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
         current = this;
         DontDestroyOnLoad(this.gameObject);
       
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = 120;
     }
 
     public event Action OpenShipDoor;

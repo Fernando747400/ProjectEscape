@@ -20,8 +20,14 @@ public class CameraHandler : MonoBehaviour
     }
     private void SwitchCamera(Camera cameraToSwitch)
     {
-        
-        Camera.main.gameObject.SetActive(false);
+        if (Camera.main == null)
+        {
+            playerCamera.gameObject.SetActive(false);
+        }
+        else
+        {
+            Camera.main.gameObject.SetActive(false);
+        }
         TurnOff();
         
         cameraToSwitch.gameObject.SetActive(true);

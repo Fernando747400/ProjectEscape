@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public event Action OpenSecondDoor;
     public void openSecondDooor() => OpenSecondDoor?.Invoke();
 
+    public event Action OpenThirdDoor;
+    public void openThirdDooor() => OpenThirdDoor?.Invoke();
 
     public event Action FinishTutorial;
     public void finishTutorial() => FinishTutorial?.Invoke();

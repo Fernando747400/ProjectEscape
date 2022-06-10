@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f99a6bcae2387749843bd83af7fb0ba, type: 3}
   m_Name: Card
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 21300000, guid: dcaa29b6c33f6f249951b9b6e07e8490, type: 3}
+  itemImage: {fileID: 21300000, guid: b74d9fa5c824e3448acb156a79f12ba6, type: 3}
   nameItem: Card
+  namePuzzle: 
   MyPoolKey: item

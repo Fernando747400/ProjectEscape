@@ -19,7 +19,8 @@ TagManager:
   - Props
   - Room
   - UI_Interactions
-  - Room_1
+  - Potion
+  - NumButton
   layers:
   - Default
   - TransparentFX

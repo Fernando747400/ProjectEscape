@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f99a6bcae2387749843bd83af7fb0ba, type: 3}
   m_Name: Fuse1
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 21300000, guid: c233e4b1bebdf2c4987c893c090381eb, type: 3}
-  nameItem: Fuse1
+  itemImage: {fileID: 21300000, guid: 4949089cfa175e94196867ea7701ef4a, type: 3}
+  nameItem: Fuze
+  namePuzzle: 
   MyPoolKey: item

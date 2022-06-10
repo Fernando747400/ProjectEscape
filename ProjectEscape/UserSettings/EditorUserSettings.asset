@@ -20,6 +20,7 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedScenePath-2:
       value: 22424703114646680e0b0227036c0f43291f19242b29347e38271427fb
+<<<<<<< HEAD
 <<<<<<< Master
       flags: 0
 <<<<<<< Master
@@ -35,6 +36,9 @@ EditorUserSettings:
 =======
 >>>>>>> Particles
 =======
+=======
+<<<<<<< HEAD
+>>>>>>> MasterFInal
       flags: 0
     RecentlyUsedScenePath-3:
       value: 22424703114646680e0b0227036c6f050c0d142f3f67766112190829f8ec3176f7e93ffdfe
@@ -53,8 +57,15 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedScenePath-8:
       value: 22424703114646680e0b0227036c6f050c0d142f3f67766612190829f8ec3176f7e93ffdfe
+<<<<<<< HEAD
       flags: 0
 >>>>>>> Little Changes Potions
+=======
+      flags: 0
+=======
+      flags: 0
+>>>>>>> MasterFInal
+>>>>>>> MasterFInal
     vcSharedLogLevel:
       value: 0d5e400f0650
       flags: 0

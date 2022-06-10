@@ -47,6 +47,7 @@ public class FinalFuze : MonoBehaviour, IUsable
         get;
         set;
     }
+
     public void Use()
     {
 
@@ -55,7 +56,7 @@ public class FinalFuze : MonoBehaviour, IUsable
             GameManager.current.activateInteracting();
         }
        
-        CheckPuzzleState();
+        //CheckPuzzleState();
     }
 
 

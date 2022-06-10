@@ -12,6 +12,6 @@ public class RetryPotion : MonoBehaviour
     {
         ColorOne.color = Color.black;
         ColorTwo.color = Color.black;
-        FinalPotion.gameObject.GetComponent<Renderer>().material.color = Color.white;
+        FinalPotion.GetComponent<Renderer>().material.color = Color.white;
     }
 }

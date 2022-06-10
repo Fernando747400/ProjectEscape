@@ -1,16 +1,20 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class Keypad : MonoBehaviour
 {
     public string pasword = "";
     private string UserInput = "";
     public TextMeshPro ShowInput;
+    private bool DontRepeat = false;
+    public int cameraPlaceArray = 3;
 
     private void Start()
     {
         ShowInput.text = "";
         UserInput = "";
+        ShowInput.text = "";
     }
 
     public void ButtonCliked(string number)
@@ -35,9 +39,10 @@ public class Keypad : MonoBehaviour
 
     public void CheckPasword()
     {
-        if(UserInput == pasword)
+        if(UserInput == pasword && DontRepeat == false)
         {
             ShowInput.text = "great";
+            //StartCoroutine(WaitOpenDoor());
         }
         if(UserInput != pasword)
         {
@@ -45,4 +50,20 @@ public class Keypad : MonoBehaviour
             UserInput = "";
         }
     }
+
+    /*
+    IEnumerator WaitOpenDoor()
+    {
+        PlayerController.current.DeactivateInteracting();
+        CameraHandler.current.SelectCamera(cameraPlaceArray);
+        PlayerController.current.SetPlayerInCinematic();
+        yield return new WaitForSeconds(1);
+        GameManager.current.openSecondDooor();
+        yield return new WaitForSeconds(5);
+        CameraHandler.current.SwitchToPlayerCamera();
+        PlayerController.current.UnSetPlayerCinematic();
+
+        DontRepeat = true;
+    }
+    ¨*/
 }

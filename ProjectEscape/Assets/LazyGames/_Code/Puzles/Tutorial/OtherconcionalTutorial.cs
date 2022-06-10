@@ -4,6 +4,8 @@ public class OtherconcionalTutorial: MonoBehaviour
 {
     public GameObject Cristal;
     public Material Bombilla;
+    public string sound;
+    public string stinger;
 
     public void Start()
     {
@@ -17,10 +19,8 @@ public class OtherconcionalTutorial: MonoBehaviour
         {
             Bombilla.color = Color.green;
             Cristal.gameObject.SetActive(false);
-
-            // Call Event open door
-            //FindObjectOfType<AudioManager>().Play("Card_Slide");
-
+            if (sound != null || sound != "") PlaySound(sound);
+            if (stinger != null || stinger != "") PlaySound(stinger);
             GameManager.current.openShipDoor();
         }
         else if (other.tag == "bad")
@@ -29,5 +29,10 @@ public class OtherconcionalTutorial: MonoBehaviour
             Cristal.gameObject.SetActive(true);
 
         }
+    }
+
+    public void PlaySound(string _sound)
+    {
+        AudioManager.instance.Play(_sound);
     }
 }

@@ -20,6 +20,7 @@ TagManager:
   - Room
   - UI_Interactions
   - Potion
+  - NumButton
   layers:
   - Default
   - TransparentFX
